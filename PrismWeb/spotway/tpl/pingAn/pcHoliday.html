@@ -1,0 +1,246 @@
+<div data-ng-controller="pingAn_PcHoliday" class="pingAn">
+
+    <div class="headerHoliday">
+        <ul class="headerNav">
+            <!--<li class="firstLi liActive" data-ng-click="firstLi()">KPI指标</li>
+            <li class="secondLi" data-ng-click="secondLi()">非KPI指标</li>-->
+            <a style="float: right;font-weight: bolder;color: #0db1cc" data-ng-click="fanhuijiuban();">返回旧版</a>
+        </ul>
+
+        <div class="headerContent" data-ng-hide="contentChanges">
+            <ul class="contentUl">
+                <li id="yitouzijine">
+                    <div class="liBottom liBottomActive">
+                        <!--<span class="liSpan liSpan1">投资</span>-->
+                        <p class="pWord">已投资金额(亿元)</p>
+                        <div class="liBottomLeft">
+                            <p id="yitouzi"></p>
+                            <!--<span>完成率:</span>-->
+                            <span></span>
+                        </div>
+                        <div class="backgroundimg" style="width:35%;height:80px;position:absolute;right:-6px;top:21px;background:url(img/tb2/huikuan.png) no-repeat;background-size:80% 88%;opacity:.8"></div>
+
+                    </div>
+                </li>
+
+                <li id="yikaifamianji">
+                    <div class="liBottom">
+                        <!--<span class="liSpan liSpan2">开发</span>-->
+                        <p class="pWord">已开发面积(万方)</p>
+                        <div class="liBottomLeft">
+                            <p id="yikaifa"></p>
+                            <!--<span>完成率:</span>-->
+                            <span></span>
+                        </div>
+                        <!--<div ng-controller="echartColumnControllerH2" class="liBottomRight" id="container1" style="width:35%;height:80px"></div>-->
+                        <div class="backgroundimg" style="width:35%;height:80px;position:absolute;right:-6px;top:21px;background:url(img/tb2/mianji.png) no-repeat;background-size:80% 88%;opacity:.8"></div>
+
+                    </div>
+                </li>
+
+                <li id="yixiaoshouje">
+                    <div class="liBottom">
+                        <!--<span class="liSpan liSpan3">销售</span>-->
+                        <p class="pWord">已销售金额(亿元)</p>
+                        <div class="liBottomLeft">
+                            <p id="yixiaoshoujine"></p>
+                            <!--<span>完成率:</span>-->
+                            <span></span>
+                        </div>
+                        <div class="backgroundimg" style="width:35%;height:80px;position:absolute;right:-6px;top:21px;background:url(img/bcimg/cumulative.png) no-repeat;background-size:80% 88%;opacity:.8"></div>
+
+                    </div>
+                </li>
+
+                <li id="lirune">
+                    <div class="liBottom">
+                        <!--<span class="liSpan liSpan4">利润</span>-->
+                        <p class="pWord">利润额(亿元)</p>
+                        <div class="liBottomLeft">
+                            <p id="lirun"></p>
+                            <!--<span>完成率:</span>-->
+                            <span></span>
+                        </div>
+                        <div class="backgroundimg" style="width:35%;height:80px;position:absolute;right:-6px;top:21px;background:url(img/tb2/shouyi.png) no-repeat;background-size:80% 88%;opacity:.8"></div>
+
+                    </div>
+                </li>
+                <li id="yixiaoshoumianji">
+                    <div class="liBottom" style="position: relative;">
+                        <p class="pWord">已销售面积(万方)</p>
+                        <div class="liBottomLeft" >
+                            <p id="xiaoshoumianji"></p>
+                        </div>
+                        <!--<span class="spanFont">累计已销售面积</span>-->
+                        <span class="spanNumber"></span>
+                        <div class="backgroundimg" style="width:35%;height:80px;position:absolute;right:-6px;top:21px;background:url(img/tb2/mianji1.png) no-repeat;background-size:80% 88%;opacity:.8"></div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <!--<div class="headerContent1" data-ng-hide="contentChanges1">
+            <ul class="content1Ul">
+                <li id="yixiaoshoumianji">
+                    <div class="liContent" style="position: relative;">
+                        <p class="pFirst">已销售面积(万方)</p>
+                        <p class="pNumber" id="xiaoshoumianji"></p>
+                        &lt;!&ndash;<span class="spanFont">累计已销售面积</span>&ndash;&gt;
+                        <span class="spanNumber"></span>
+                        <div class="backgroundimg" style="width:35%;height:80px;position:absolute;right:-6px;top:30px;background:url(img/tb2/mianji1.png) no-repeat;background-size:80% 88%;opacity:.8"></div>
+                    </div>
+                </li>
+
+                &lt;!&ndash;<li>&ndash;&gt;
+                    &lt;!&ndash;<div class="liContent">&ndash;&gt;
+                        &lt;!&ndash;<p class="pFirst">项目现金(亿元)</p>&ndash;&gt;
+                        &lt;!&ndash;<p class="pNumber">115.5</p>&ndash;&gt;
+                        &lt;!&ndash;<span class="spanFont">累计项目现金</span>&ndash;&gt;
+                        &lt;!&ndash;<span class="spanNumber">1,421.09</span>&ndash;&gt;
+                    &lt;!&ndash;</div>&ndash;&gt;
+                &lt;!&ndash;</li>&ndash;&gt;
+
+                &lt;!&ndash;<li>&ndash;&gt;
+                    &lt;!&ndash;<div class="liContent liContentActive">&ndash;&gt;
+                        &lt;!&ndash;<p class="pFirst">已投项目数量(个)</p>&ndash;&gt;
+                        &lt;!&ndash;<p class="pNumber">133</p>&ndash;&gt;
+                        &lt;!&ndash;<span class="spanFont">累计已投项目数量</span>&ndash;&gt;
+                        &lt;!&ndash;<span class="spanNumber">1,98.9</span>&ndash;&gt;
+                    &lt;!&ndash;</div>&ndash;&gt;
+                &lt;!&ndash;</li>&ndash;&gt;
+
+                &lt;!&ndash;<li>&ndash;&gt;
+                    &lt;!&ndash;<div class="liContent">&ndash;&gt;
+                        &lt;!&ndash;<p class="pFirst">权益销售金额(亿元)</p>&ndash;&gt;
+                        &lt;!&ndash;<p class="pNumber">1,156.4</p>&ndash;&gt;
+                        &lt;!&ndash;<span class="spanFont">累计权益销售金额</span>&ndash;&gt;
+                        &lt;!&ndash;<span class="spanNumber">2,678.5</span>&ndash;&gt;
+                    &lt;!&ndash;</div>&ndash;&gt;
+                &lt;!&ndash;</li>&ndash;&gt;
+
+                &lt;!&ndash;<li>&ndash;&gt;
+                    &lt;!&ndash;<div class="liContent">&ndash;&gt;
+                        &lt;!&ndash;<p class="pFirst">项目销售回款(亿元)</p>&ndash;&gt;
+                        &lt;!&ndash;<p class="pNumber">2,527.68</p>&ndash;&gt;
+                        &lt;!&ndash;<span class="spanFont">累计项目销售回款</span>&ndash;&gt;
+                        &lt;!&ndash;<span class="spanNumber">120,765.9</span>&ndash;&gt;
+                    &lt;!&ndash;</div>&ndash;&gt;
+                &lt;!&ndash;</li>&ndash;&gt;
+
+                &lt;!&ndash;<li>&ndash;&gt;
+                    &lt;!&ndash;<div class="liContent">&ndash;&gt;
+                        &lt;!&ndash;<p class="pFirst">收益(亿元)</p>&ndash;&gt;
+                        &lt;!&ndash;<p class="pNumber">583.7</p>&ndash;&gt;
+                        &lt;!&ndash;<span class="spanFont">累计收益</span>&ndash;&gt;
+                        &lt;!&ndash;<span class="spanNumber">1,467.53</span>&ndash;&gt;
+                    &lt;!&ndash;</div>&ndash;&gt;
+                &lt;!&ndash;</li>&ndash;&gt;
+
+                &lt;!&ndash;<li>&ndash;&gt;
+                    &lt;!&ndash;<div class="liContent">&ndash;&gt;
+                        &lt;!&ndash;<p class="pFirst">销售面积(万方)</p>&ndash;&gt;
+                        &lt;!&ndash;<p class="pNumber">557.3</p>&ndash;&gt;
+                        &lt;!&ndash;<span class="spanFont">累计销售面积</span>&ndash;&gt;
+                        &lt;!&ndash;<span class="spanNumber">1,194.5</span>&ndash;&gt;
+                    &lt;!&ndash;</div>&ndash;&gt;
+                &lt;!&ndash;</li>&ndash;&gt;
+            </ul>
+        </div>-->
+    </div>
+
+    <div class="bodyerHoliday">
+        <!--<ul class="bodyerNav">-->
+            <!--<li class="liActive thirdLi" data-ng-click="thirdLi()">权益前</li>-->
+            <!--<li class="fouthLi" data-ng-click="fouthLi()">权益后</li>-->
+        <!--</ul>-->
+
+        <div class="bodyerContent" data-ng-hide="normChanges">
+            <div class="contentLeft">
+                <p id="chakanxiang1" style="background-color: #0a9ccc ; -moz-box-shadow:2px 2px #0a9ccc;/*firefox*/
+        -webkit-box-shadow:2px 2px #0a9ccc;/*webkit*/">投资金额排名(亿元)</p>
+                <div class="contentleftBox" ng-controller="echartColumnController">
+                    <div id="container4"></div>
+                </div>
+            </div>
+
+            <div class="contentRight" style="position: relative;">
+                <p id="chakanxiang2" style="background-color: #0a9ccc ; -moz-box-shadow:2px 2px #0a9ccc;/*firefox*/
+        -webkit-box-shadow:2px 2px #0a9ccc;/*webkit*/">投资金额(亿元)</p>
+                <span class="table_back glyphicon glyphicon-share-alt" style="position:absolute;right: 9%;top: 5.8%;color:white;display: none">
+                    <span style="display: inline-block;position: absolute;width: 30px;top: -2px;left:19px">返回</span>
+                </span>
+                <!--<div class="contentRightBox">-->
+                <!--///以投资额-->
+                    <table class="contentTable"  id="yitouzijinebiaoge">
+                        <tbody class="tBodyerHoliday"  style="overflow: auto">
+
+                        <tr >
+                            <td>{{fengongsimingzi}}</td>
+                            <td >投资额投决版</td>
+                            <td>投资额董事会版</td>
+                            <td>累计已投资金额</td>
+                            <td>当年投资额投决版</td>
+                            <td>当年实际投资额</td>
+                        </tr>
+
+                        <tr style="text-align: center;" ng-repeat="x in touzijine">
+                            <td><a href="javascript:;" data-ng-click="yitouzijinejuti(x[0].data)">{{ x[0].data }}</a></td>
+                            <td>{{ x[1].data.toFixed(2) }}</td>
+                            <td>{{ x[2].data.toFixed(2) }}</td>
+                            <td>{{ x[3].data.toFixed(2) }}</td>
+                            <td>{{ x[4].data.toFixed(2) }}</td>
+                            <td>{{ x[5].data.toFixed(2) }}</td>
+                        </tr>
+
+                        <tr style="text-align: center">
+                            <td>合计</td>
+                            <td>1,701.4</td>
+                            <td>2,039.88</td>
+                            <td>1,111.53</td>
+                            <td>148.65</td>
+                            <td>88%</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                <!--</div>-->
+                <!--//已开发面积-->
+                <!--//已销售金额-->
+
+                <!--利润额-->
+                <!--已销售面积-->
+
+                <!--</div>-->
+
+
+            </div>
+
+        </div>
+
+        <!--<div class="bodyerContent1" data-ng-hide="normChanges1" style="display: none;">权益后页面</div>-->
+
+
+    <!--<div class="footerNorm">
+        <div class="pageCenter">
+            <ul>
+                <li>《</li>
+                <li>〈</li>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>〉</li>
+                <li>》</li>
+            </ul>
+        </div>
+        <div class="pageLeft">
+            <span>行数</span>
+            <span>1-10</span>
+            <div class="pageLeftL">
+                (<span class="sumSpan">131</span>总行数)
+            </div>
+        </div>
+    </div>
+
+</div>

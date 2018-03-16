@@ -1,0 +1,176 @@
+<div data-ng-controller="pingAnInsuranceController" class="pingAn">
+
+    <div class="headerInsurance">
+        <ul class="headerNav">
+            <li class="firstLi liActive">KPI指标</li>
+        </ul>
+
+        <div class="headerContent" data-ng-hide="contentChanges">
+            <ul class="contentUl">
+                <li>
+                    <div class="liBottom liBottomActive">
+                        <p class="pWord">累计实投金额(亿元)</p>
+                        <div class="liBottomLeft">
+                            <p>{{pFont}}</p>
+                            <span>完成率:</span>
+                            <span>120%</span>
+                        </div>
+                        <div ng-controller="echartColumnController1" class="liBottomRight" id="container" style="width:35%;height:80px"></div>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="bodyerInsurance">
+        <ul class="bodyerNav">
+
+        </ul>
+
+        <div class="bodyerContent">
+            <div class="contentRight">
+                <p>实际投资规模(亿元)</p>
+                <table class="contentTable">
+                    <tbody class="tBodyer">
+                    <tr>
+                        <td>项目名称</td>
+                        <td>起源日前</td>
+                        <td>收益率</td>
+                        <td>期限(年)</td>
+                        <td>实投金额</td>
+                    </tr>
+                   <!-- <tr>
+                        <td>中信-电建地产成都项目</td>
+                        <td>2016-12-01</td>
+                        <td>76</td>
+                        <td>4</td>
+                        <td>70,000</td>
+                    </tr>
+                    <tr>
+                        <td>中原信拖-安徽启迪科技</td>
+                        <td>2017-06-30</td>
+                        <td>110.5</td>
+                        <td>2+1</td>
+                        <td>70,000</td>
+                    </tr>
+                    <tr>
+                        <td>交银国信-集通129号集合</td>
+                        <td>2017-09-29</td>
+                        <td>210.89</td>
+                        <td>5+3</td>
+                        <td>120,000</td>
+                    </tr>
+                    <tr>
+                        <td>中信-电建地产成都项目</td>
+                        <td>2016-12-01</td>
+                        <td>266.39</td>
+                        <td>10+5</td>
+                        <td>200,000</td>
+                    </tr>
+                    <tr>
+                        <td>中信-电建地产成都项目</td>
+                        <td>2016-12-01</td>
+                        <td>291.89</td>
+                        <td>3+2</td>
+                        <td>200,000</td>
+                    </tr>
+                    <tr>
+                        <td>中信-电建地产成都项目</td>
+                        <td>2016-12-01</td>
+                        <td>364.89</td>
+                        <td>6</td>
+                        <td>50,000</td>
+                    </tr>
+                    <tr>
+                        <td>中信-电建地产成都项目</td>
+                        <td>2016-12-01</td>
+                        <td>387.89</td>
+                        <td>5</td>
+                        <td>100,000</td>
+                    </tr>
+                    <tr>
+                        <td>中信-电建地产成都项目</td>
+                        <td>2016-12-01</td>
+                        <td>397.89</td>
+                        <td>5</td>
+                        <td>50,000</td>
+                    </tr>
+                    <tr>
+                        <td>中信-电建地产成都项目</td>
+                        <td>2016-12-01</td>
+                        <td>454.08</td>
+                        <td>6</td>
+                        <td>200,000</td>
+                    </tr>
+                    <tr>
+                        <td>中信-电建地产成都项目</td>
+                        <td>2016-12-01</td>
+                        <td>387.89</td>
+                        <td>5</td>
+                        <td>100,000</td>
+                    </tr>
+                    <tr>
+                        <td>中信-电建地产成都项目</td>
+                        <td>2016-12-01</td>
+                        <td>397.89</td>
+                        <td>5</td>
+                        <td>50,000</td>
+                    </tr>
+                    <tr>
+                        <td>中信-电建地产成都项目</td>
+                        <td>2016-12-01</td>
+                        <td>454.08</td>
+                        <td>6</td>
+                        <td>200,000</td>
+                    </tr>
+                    <tr>
+                        <td>中信-电建地产成都项目</td>
+                        <td>2016-12-01</td>
+                        <td>387.89</td>
+                        <td>5</td>
+                        <td>100,000</td>
+                    </tr>
+                    <tr>
+                        <td>中信-电建地产成都项目</td>
+                        <td>2016-12-01</td>
+                        <td>397.89</td>
+                        <td>5</td>
+                        <td>50,000</td>
+                    </tr>
+                    <tr>
+                        <td>中信-电建地产成都项目</td>
+                        <td>2016-12-01</td>
+                        <td>454.08</td>
+                        <td>6</td>
+                        <td>200,000</td>
+                    </tr>-->
+                    </tbody>
+                </table>
+                <div class="footerInsurance">
+                    <ul class="pageCenter">
+                        <li>《</li>
+                        <li>〈</li>
+                        <li class="liActive">1</li>
+                        <li>2</li>
+                        <li>3</li>
+                        <li>4</li>
+                        <li>5</li>
+                        <li>6</li>
+                        <li>〉</li>
+                        <li>》</li>
+                    </ul>
+                    <div class="pageLeft">
+                        <span>行数</span>
+                        <span>1-10</span>
+                        <!--<div class="pageLeftL">
+                            (<span class="sumSpan">131</span>总行数)
+                        </div>-->
+                        (<span class="sumSpan">131</span>总行数)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

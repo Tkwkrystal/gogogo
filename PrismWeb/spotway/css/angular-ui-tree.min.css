@@ -1,0 +1,91 @@
+.angular-ui-tree-empty {
+	/*border: 1px dashed #bbb;*/
+	min-height: 100px;
+	/*background-color: #e5e5e5;*/
+	/*background-image: -webkit-linear-gradient(45deg,#fff 25%,transparent 0,transparent 75%,#fff 0,#fff),-webkit-linear-gradient(45deg,#fff 25%,transparent 0,transparent 75%,#fff 0,#fff);
+	background-image: linear-gradient(45deg,#fff 25%,transparent 0,transparent 75%,#fff 0,#fff),linear-gradient(45deg,#fff 25%,transparent 0,transparent 75%,#fff 0,#fff);*/
+	background-size: 60px 60px;
+	background-position: 0 0,30px 30px;
+	pointer-events: none
+}
+
+.angular-ui-tree-nodes {
+	position: relative;
+	margin: 0;
+	padding: 0;
+	list-style: none
+}
+
+.angular-ui-tree-nodes .angular-ui-tree-nodes {
+	/*padding-left: 20px;*/
+	/*background-color: #2C4E96;*/
+	background-color: #16232C;
+}
+
+.angular-ui-tree-node,.angular-ui-tree-placeholder {
+	position: relative;
+	margin: 0;
+	padding: 0;
+	min-height: 20px;
+	line-height: 20px
+}
+
+.angular-ui-tree-hidden {
+	display: ;
+	/*border: 1px solid red;*/
+	/*background-color: red;*/
+	/*height:40px;*/
+}
+
+.angular-ui-tree-placeholder {
+	/*margin: 10px;*/
+	margin: 0px;
+	padding: 0;
+	min-height: 30px;
+	border: 1px dashed #dae2ea;
+}
+
+.angular-ui-tree-handle {
+	cursor: move;
+	text-decoration: none;
+	font-weight: 700;
+	box-sizing: border-box;
+	min-height: 40px;
+	line-height: 20px
+}
+
+.angular-ui-tree-drag {
+	position: absolute;
+	pointer-events: none;
+	z-index: 999;
+	opacity: .8
+}
+
+.angular-ui-tree-drag .tree-node-content {
+	margin-top: 0
+}
+.tree-node-content{
+        /*margin: 10px;*/
+	margin: 0;
+}
+.tree-node{
+	/*border: 1px solid #dae2ea;*/
+    background: #f8faff;
+    color: #7c9eb2;
+}
+.angular-ui-tree-handle{
+        /*background: #f8faff;*/
+	background-color: transparent;
+    /*border: 1px solid #dae2ea;*/
+    color: #FCFEFB;
+    /*padding: 10px 10px;*/
+	padding:10px 0;
+}
+.angular-ui-tree-handle:hover{
+	/*background-color: #4768AB;*/
+	background-color: #1D2B36;
+	/*border:1px dashed #dae2ea;*/
+}
+.angular-ui-tree-nodes .angular-ui-tree-nodes .angular-ui-tree-handle{
+	padding-left: 20px;
+}

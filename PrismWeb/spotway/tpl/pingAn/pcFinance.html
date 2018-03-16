@@ -1,0 +1,149 @@
+
+<div class="Finance" ng-controller="pingAnFinanceController" data-ng-show="pageshow">
+	<a style="float: right;font-weight: bolder;color: #0db1cc;position: absolute;padding-right: 50px;padding-top: 10px;right:0;top:-37px" id="fanhuijiubankaifa"  data-ng-click="fanhuijiubankaifa();">返回旧版</a>
+
+
+	<header>
+
+		<div class="top_zhibiao">
+
+
+			<div ng-class="{'xx1': 'active', 'xx2': '','xx3':''}[isActive]" ng-click="isActive='xx1'">
+				<p>实际投资规模(亿元)</p>
+				<p>{{pFont}}</p>
+
+				<!--<p>完成率：120%</p>-->
+				<div class="top_zhibiao_tu" style="width: 35%;height: 80px;display: none"></div>
+				<div class="backgroundimg" style="width:35%;height:100px;position:absolute;right:-6px;top:20px;background:url(img/tb2/huikuan1.png) no-repeat;background-size:80% 88%;opacity:.8"></div>
+			</div>
+			<div ng-class="{'xx1': '', 'xx2': 'active','xx3':''}[isActive]" ng-click="isActive='xx2'">
+				<div class="top_zhibiao_left">
+					<div>
+						<div class="top_zhibiao_yuan" style="background: #FF9427;"></div>
+						<div class="top_zhibiao_value">
+							<span>信用债</span>
+							<span>{{creditDebt}}</span>
+						</div>
+					</div>
+					<div>
+						<div class="top_zhibiao_yuan" style="background: #807F75;"></div>
+						<div class="top_zhibiao_value">
+							<span>抵质押债非合股</span>
+							<span>{{notStock}}</span>
+						</div>
+					</div>
+					<div>
+						<div class="top_zhibiao_yuan" style="background: #FFC52D;"></div>
+						<div class="top_zhibiao_value">
+							<span>抵质押债合股</span>
+							<span>{{stock}}</span>
+						</div>
+					</div>
+				</div>
+				<div class="top_zhibiao_tu top_zhibiao_right"></div>
+			</div>
+			<div ng-class="{'xx1': '', 'xx2': '','xx3':'active'}[isActive]" ng-click="isActive='xx3'">
+				<div class="top_zhibiao_left">
+					<div>
+						<div class="top_zhibiao_yuan" style="background: #FF5721;"></div>
+						<div class="top_zhibiao_value">
+							<span>6个月</span>
+							<span>{{value1}}</span>
+						</div>
+					</div>
+					<div>
+						<div class="top_zhibiao_yuan" style="background: #FFA027;"></div>
+						<div class="top_zhibiao_value">
+							<span>大于6个月</span>
+							<span>{{value2}}</span>
+						</div>
+					</div>
+					<div>
+						<div class="top_zhibiao_yuan" style="background: #93908B;"></div>
+						<div class="top_zhibiao_value">
+							<span>小于6个月</span>
+							<span>{{value3}}</span>
+						</div>
+					</div>
+				</div>
+				<div class="top_zhibiao_tu top_zhibiao_right"></div>
+			</div>
+		</div>
+		<span class="top_kpi">开发金融</span>
+		<span class="top_kpi"  data-ng-click="pageshowx()">保险金融</span>
+	</header>
+	<footer>
+		<div class="footer_left" style="width:52.5%">
+			<div class="footer_left_top">
+				实际投资规模(亿元)
+			</div>
+			<div class="footer_left_bottom"></div>
+		</div>
+		<div class="footer_right" style="width:42.5%">
+			<div class="footer_right_top">
+				投资金额(亿元)
+			</div>
+			<div class="footer_right_bottom">
+				<table border="0" cellspacing="0" cellpadding="0">
+					<tbody class="footerTbody">
+                    <tr class="footer_right_bottom_top" style="position:absolute;font-weight: bold;"><td style="width: 1%;color:black;">月份</td><td style="width: 1%;color:black;">实际投资规模</td><td style="width: 1%;color:black;">当月增量</td></tr>
+					<tr><td>月份</td><td>实际投资规模</td><td>当月增量</td></tr>
+
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</footer>
+</div>
+<div data-ng-controller="pingAnInsuranceController" class="pingAn" data-ng-hide="pageshow" style="position:relative">
+	<p id="fanhuijiubanjinrong" style="position: absolute; float: right;padding-right: 50px;padding-top: 10px;right:0;" data-ng-click="fanhuijiubanjinrong();">返回旧版</p>
+    <div class="headerInsurance">
+        <ul class="headerNav">
+            <li class="firstLi liActive"  data-ng-click="pageshowxx()">开发金融</li>
+            <li class="firstLi liActive">保险金融</li>
+        </ul>
+
+        <div class="headerContent" data-ng-hide="contentChanges">
+            <ul class="contentUl">
+                <li>
+                    <div class="liBottom ">
+                        <p class="pWord">累计实投金额(亿元)</p>
+                        <div class="liBottomLeft">
+                            <p>{{pFontx}}</p>
+                            <!--<span>完成率:</span>-->
+                            <!--<span>120%</span>-->
+                        </div>
+                        <!--<div ng-controller="echartColumnController1" class="liBottomRight" id="container" style="width:35%;height:80px"></div>-->
+						<div class="backgroundimg" style="width:35%;height:80px;position:absolute;right:6px;top:22px;background:url(img/tb2/huikuan1.png) no-repeat;background-size:97% 106%;opacity:.8"></div>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="bodyerInsurance">
+        <ul class="bodyerNav">
+
+        </ul>
+
+        <div class="bodyerContent">
+            <div class="contentRight">
+                <p>实际投资规模(亿元)</p>
+                <table class="contentTable">
+                    <tbody class="tBodyer">
+                    <tr class="contentTable_top" style="position:absolute;font-weight: bold;color:black;background:#E6E6E6">
+                        <td style="font-weight: bold;color:black">项目名称</td>
+                        <td style="font-weight: bold;color:black">起源日期</td>
+                        <td  style="font-weight: bold;color:black">收益率</td>
+                        <td style="font-weight: bold;color:black">期限(年)</td>
+                        <td style="font-weight: bold;color:black">实投金额</td>
+                    </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>

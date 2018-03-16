@@ -1,0 +1,222 @@
+<div data-ng-controller="pingAnVacationController" class="pingAn">
+
+    <div class="headerVacation">
+        <ul class="headerNav">
+            <li class="firstLi liActive" data-ng-click="firstLi()">KPI指标</li>
+            <li class="secondLi" data-ng-click="secondLi()">非KPI指标</li>
+        </ul>
+
+        <div class="headerContent" data-ng-hide="contentChanges">
+            <ul class="contentUl">
+                <li>
+                    <div class="liBottom liBottomActive">
+                        <p class="pWord">已投资金额(亿元)</p>
+                        <div class="liBottomLeft">
+                            <p>62.2</p>
+                            <span>完成率:</span>
+                            <span>120%</span>
+                        </div>
+                        <div ng-controller="echartColumnController1" class="liBottomRight" id="container" style="width:35%;height:80px"></div>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="liBottom">
+                        <p class="pWord">已开发面积(万方)</p>
+                        <div class="liBottomLeft">
+                            <p>54.1</p>
+                            <span>完成率:</span>
+                            <span>90%</span>
+                        </div>
+                        <div ng-controller="echartColumnController2" class="liBottomRight" id="container1" style="width:35%;height:80px"></div>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="liBottom">
+                        <p class="pWord">已销售金额(亿元)</p>
+                        <div class="liBottomLeft">
+                            <p>25.6</p>
+                            <span>完成率:</span>
+                            <span>108%</span>
+                        </div>
+                        <div ng-controller="echartColumnController3" class="liBottomRight" id="container2" style="width:35%;height:80px"></div>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="liBottom">
+                        <p class="pWord">利润额(亿元)</p>
+                        <div class="liBottomLeft">
+                            <p>-1.2</p>
+                            <span>完成率:</span>
+                            <span>160%</span>
+                        </div>
+                        <div ng-controller="echartColumnController4" class="liBottomRight" id="container3" style="width:35%;height:80px"></div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="headerContent1" data-ng-hide="contentChanges1">
+            <ul class="content1Ul">
+                <li>
+                    <div class="liContent liContentActive">
+                        <p class="pFirst">已销售面积(万方)</p>
+                        <p class="pNumber">16.2</p>
+                        <span class="spanFont">累计已销售面积</span>
+                        <span class="spanNumber">12,098.9</span>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+    <div class="bodyerVacation">
+        <ul class="bodyerNav">
+           <!-- <li class="liActive thirdLi" data-ng-click="thirdLi()">权益前</li>
+            <li class="fouthLi" data-ng-click="fouthLi()">权益后</li>-->
+        </ul>
+
+        <div class="bodyerContent" data-ng-hide="normChanges">
+            <div class="contentLeft">
+                <p>销售回款排名(亿元)</p>
+                <div class="contentleftBox" ng-controller="echartColumnController">
+                    <div id="container4"></div>
+                </div>
+            </div>
+
+            <div class="contentRight">
+                <p>销售回款(亿元)</p>
+                <!--<div class="contentRightBox">-->
+                <table class="contentTable">
+                    <tbody class="tBodyer">
+                    <tr>
+                        <td>分公司</td>
+                        <td>投资额投决版</td>
+                        <td>投资额董事版</td>
+                        <td>累计已投资额</td>
+                        <td>当年投资额投决版</td>
+                        <td>当年实际投资额</td>
+                    </tr>
+                    <tr>
+                        <td><a href="javascript:;">上海区</a></td>
+                        <td>12.4</td>
+                        <td>12.4</td>
+                        <td>13.9</td>
+                        <td>3.4</td>
+                        <td>1.0</td>
+                    </tr>
+                    <tr>
+                        <td><a href="javascript:;">华西区</a></td>
+                        <td>372.87</td>
+                        <td>517.66</td>
+                        <td>199.09</td>
+                        <td>0.56</td>
+                        <td>98%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="javascript:;">东南区</a></td>
+                        <td>216.56</td>
+                        <td>161.72</td>
+                        <td>193.81</td>
+                        <td>27.37</td>
+                        <td>66%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="javascript:;">北方区</a></td>
+                        <td>193.42</td>
+                        <td>472.3</td>
+                        <td>144.15</td>
+                        <td>17.2</td>
+                        <td>86%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="javascript:;">华东区</a></td>
+                        <td>129.88</td>
+                        <td>102.64</td>
+                        <td>130.27</td>
+                        <td>19.2</td>
+                        <td>78%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="javascript:;">华南区</a></td>
+                        <td>180.14</td>
+                        <td>159.2</td>
+                        <td>104.33</td>
+                        <td>15.09</td>
+                        <td>99%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="javascript:;">华中区</a></td>
+                        <td>209.1</td>
+                        <td>216.75</td>
+                        <td>101.22</td>
+                        <td>34.16</td>
+                        <td>67%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="javascript:;">安德</a></td>
+                        <td>29.62</td>
+                        <td>52.19</td>
+                        <td>29.47</td>
+                        <td>11.42</td>
+                        <td>78%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="javascript:;">深莞惠区</a></td>
+                        <td>24.7</td>
+                        <td>18.57</td>
+                        <td>7.25</td>
+                        <td>0</td>
+                        <td>45%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="javascript:;">总部</a></td>
+                        <td>3.29</td>
+                        <td>3.29</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>合计</td>
+                        <td>1,701.4</td>
+                        <td>2,039.88</td>
+                        <td>1,111.53</td>
+                        <td>148.65</td>
+                        <td>96%</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <!--</div>-->
+            </div>
+        </div>
+    </div>
+
+    <!--<div class="footerNorm">
+        <div class="pageCenter">
+            <ul>
+                <li>《</li>
+                <li>〈</li>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>〉</li>
+                <li>》</li>
+            </ul>
+        </div>
+        <div class="pageLeft">
+            <span>行数</span>
+            <span>1-10</span>
+            <div class="pageLeftL">
+                (<span class="sumSpan">131</span>总行数)
+            </div>
+        </div>
+    </div>-->
+
+</div>

@@ -1,0 +1,131 @@
+user:
+  type: object
+  properties:
+    _id:
+      type: string
+      pattern: ^[0-9a-fA-F]{24}$
+    email:
+      type: string
+      pattern: ^\s*(?:\(\s*((?:[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-\s]*)[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+)\s*\))?\s*([a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*)\s*$
+    userName:
+      type: string
+    firstName:
+      type: string
+    lastName:
+      type: string
+    roleId:
+      type: string
+    active:
+      type: boolean
+    groups:
+      type: array
+      items:
+        type: string
+        pattern: ^[0-9a-fA-F]{24}$
+    adgroups:
+      type: array
+      items:
+        type: string
+        pattern: ^\[\d{1,3}(?:,\d{1,3}){27}\]$
+    activeDirectory:
+      type: boolean
+    principalName:
+      type: string
+    objectSid:
+      type: string
+    uSNChanged:
+      type: string
+    dn:
+      type: string
+    preferences:
+      type: object
+      properties:
+        localeId:
+          type:
+            - "string"
+            - "null"
+        language:
+          type:
+            - "string"
+            - "null"
+    created:
+      type: string
+      format: date-time
+    lastLogin:
+      type: string
+    lastUpdated:
+      type: string
+      format: date-time
+    pendingExpiration:
+      type: string
+      format: date-time
+    createdSso:
+      type: string
+sisenseUser:
+  type: object
+  properties:
+    email:
+      type: string
+      pattern: ^(?:\s*(?:\(\s*((?:[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-\s]*)[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+)\s*\))?\s*([a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*)\s*|)$
+    userName:
+      type: string
+    firstName:
+      type: string
+    lastName:
+      type: string
+    roleId:
+      type: string
+      pattern: ^[0-9a-fA-F]{24}$
+    groups:
+      type: array
+      items:
+        type: string
+        pattern: ^[0-9a-fA-F]{24}$
+    preferences:
+      type: object
+      properties:
+        localeId:
+          type:
+            - "string"
+            - "null"
+adUser:
+  type: object
+  properties:
+    userName:
+      type: string
+    roleId:
+      type: string
+      pattern: ^[0-9a-fA-F]{24}$
+    groups:
+      type: array
+      items:
+        type: string
+        pattern: ^[0-9a-fA-F]{24}$
+    objectSid:
+      type: string
+      pattern: ^\[\d{1,3}(?:,\d{1,3}){27}\]$
+    preferences:
+      type: object
+      properties:
+        localeId:
+          type:
+            - "string"
+            - "null"
+device:
+  type: object
+  properties:
+    deviceId:
+      type: string
+    token:
+      type: string
+userPreferences:
+  type: object
+  properties:
+    localeId:
+      type:
+        - "string"
+        - "null"
+    language:
+      type:
+        - "string"
+        - "null"

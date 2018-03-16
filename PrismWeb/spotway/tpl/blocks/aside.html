@@ -1,0 +1,75 @@
+<div >
+    <div class="aside-wrap">
+      <div class="navi-wrap">
+        <!-- user -->
+        <!--tips:这里有bug,hide导致的？-->
+        <!--<div class="clearfix hidden-xs text-left hide" id="aside-user">-->
+        <div class="clearfix hidden-xs text-left " ng-controller="heardNavController" id="aside-user">
+          <div class="dropdown wrapper" style="background-color: #5C5C5C;">
+            <!--<a ui-sref="app.page.profile">-->
+
+              <span class="thumb-lg w-auto-folded avatar m-t-sm">
+                <img src="img/indexImg/user.png" ng-click="addUser()" class="img-full" alt="..." style="position: relative">
+                <!--<span data-ng-show="showMassages" style="display: inline-block; width:16px; height:16px; border-radius: 50%; background-color: red;
+                color:#fff; position: absolute; bottom: 0;right:0; text-align: center; line-height: 16px;">3</span>-->
+              </span>
+
+            <a href class="dropdown-toggle hidden-folded">
+              <span class="clear">
+                <span class="inline-block m-t-sm">
+                  <span class="font-bold text-lt" style="font-size: 18px; display: inline-block; padding-top: 0px; margin-left: 18px;line-height: 2.3;cursor: default">{{user.userName}}</span>
+                </span>
+                <!--<span class="text-muted text-xs block">
+                  财务总监
+                  <b class="caret"></b>
+                </span>-->
+              </span>
+            </a>
+            <!-- dropdown -->
+            <!--<ul class="dropdown-menu animated fadeInRight w hidden-folded">-->
+              <!--<li class="wrapper b-b m-b-sm bg-info m-t-n-xs">-->
+                <!--<span class="arrow top hidden-folded arrow-info"></span>-->
+                <!--<div>-->
+                  <!--<p>300mb of 500mb used</p>-->
+                <!--</div>-->
+                <!--<progressbar value="60" type="white" class="progress-xs m-b-none dker"></progressbar>-->
+              <!--</li>-->
+              <!--<li>-->
+                <!--<a href>Settings</a>-->
+              <!--</li>-->
+              <!--<li>-->
+                <!--<a ui-sref="app.page.profile">Profile</a>-->
+              <!--</li>-->
+              <!--<li>-->
+                <!--<a href>-->
+                  <!--<span class="badge bg-danger pull-right">3</span>-->
+                  <!--Notifications-->
+                <!--</a>-->
+              <!--</li>-->
+              <!--<li class="divider"></li>-->
+              <!--<li>-->
+                <!--<a ui-sref="access.signin">Logout</a>-->
+              <!--</li>-->
+            <!--</ul>-->
+          </div>
+            <!--<ul class="hidden-folded" style="width: 100%;height:40px;background-color: black;">-->
+                <!--<li style="float: left; width: 33.333%;cursor: pointer;height:40px;text-align: center;" title="注销登录">-->
+                  <!--<a data-ng-click="logOff()" href="#/access/signin" ui-sref="access.signin"><span style="margin-top: 8px; display: inline-block;position: relative;width: 23px;height: 24px;background: url(img/indexImg/three.png) no-repeat 0 0;"></span></a>-->
+                <!--</li>-->
+                <!--<li style="float: left; width: 33.333%;height:40px;text-align: center;">
+                  <a ui-sref="app.userNews"><span style="margin-top: 8px; display: inline-block;position: relative;width: 33px;height: 24px;background: url(img/indexImg/three.png) no-repeat -103px 0;">
+                  <span style="position: absolute;top:-3px;right:-4px;width:16px;height:16px;line-height: 16px;text-align: center; border-radius: 50%;background-color:#18B193;color: #fff">3</span></span></a>
+                </li>
+                <li style="float: left; width: 33.333%;height:40px;text-align: center;">
+                  <a href="javascript:;" data-ng-click="navChange()">
+                    <span style="margin-top: 8px; display: inline-block;position: relative;width: 28px;height: 24px;background: url(img/indexImg/three.png) no-repeat -230px 0;">
+                      <span style="position: absolute;top:-3px;right:-5px;width:16px;height:16px;line-height: 16px;text-align: center; border-radius: 50%;background-color:#018BD4;color: #fff">2</span>
+                    </span>
+                  </a>
+                </li>-->
+            <!--</ul>-->
+        </div>
+        <nav ui-nav class="navi" ng-include="'tpl/blocks/nav.html'"></nav>
+      </div>
+    </div>
+</div>

@@ -1,0 +1,390 @@
+<div data-ng-controller="pingAn_PcBusiness" class="pingAn">
+
+
+    <div class="headerBusiness">
+
+        <ul class="headerNav">
+            <li class="firstLi liActive" id="right1"  data-ng-click="firstLi()">管理指标</li>
+            <li class="firstLi" id="right2"  data-ng-click="secondLi()" style="margin-left:0">投资</li>
+            <li class="firstLi" id="right3"  data-ng-click="thirdLi()" style="margin-left:0">资产管理</li>
+            <a style="float: right;font-weight: bolder;color: #0db1cc" id="touzi" data-ng-click="fanhuijiubantouzi();">返回旧版</a>
+            <a style="float: right;font-weight: bolder;color: #0db1cc;display: none" id="ziguan" data-ng-click="fanhuijiubanziguan();">返回旧版</a>
+
+            <!--<li class="right" id="right3" data-ng-click="thirdLi()">资管</li>
+            <li class="right" id="right2" data-ng-click="secondLi()">投资</li>
+            <li class="right rightActive" id="right1" data-ng-click="firstLi()">商业投资</li>
+            <li class="right1">选择内容：</li>-->
+        </ul>
+        <!--<ul class="headerNav">-->
+            <!--<li class="firstLi liActive" data-ng-click="firstLi()">KPI指标</li>-->
+            <!--<li class="secondLi" data-ng-click="secondLi()">非KPI指标</li>-->
+        <!--</ul>-->
+
+        <div class="headerContent" data-ng-hide="contentChanges">
+            <ul class="contentUl">
+                <li>
+                    <div id="suoding" class="liBottom liBottomActive" style="position:relative">
+                        <!--<span class="liSpan liSpan1">投资</span>-->
+                        <p class="pWord">年度新增锁定(亿元)</p>
+                        <div class="liBottomLeft">
+                            <p id="yitouzi">{{suoding}}</p>
+                        </div>
+                        <div ng-controller="echartColumnControllerB1" class="liBottomRight" id="container" style="width:50%;height:100px;position: absolute;bottom: 5%;right: 0px"></div>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="liBottom"  style="position:relative">
+                        <!--<span class="liSpan liSpan2">开发</span>-->
+                        <p class="pWord">新增投资(亿元)</p>
+                        <div class="liBottomLeft">
+                            <p id="yikaifa">{{touzi}}</p>
+                        </div>
+                        <div ng-controller="echartColumnControllerB2" class="liBottomRight" id="containerB1" style="width:50%;height:100px;position: absolute;bottom: 5%;right: 0px"></div>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="liBottom"  style="position:relative" id="zichanchihuibao">
+                        <!--<span class="liSpan liSpan3">销售</span>-->
+                        <p class="pWord">资产池回报</p>
+                        <div class="liBottomLeft">
+                            <p id="yixiaoshoujine">{{zichanchi}}%</p>
+                        </div>
+                        <p class="pWord1" style="position: absolute;right:20px;bottom: 8px;font-size:12px">预算达成率</p>
+                        <div class="liBottomLeft" style="position: absolute;right: 42px;">
+                            <p id="lirun">{{yusuandacheng}}%</p>
+                        </div>
+						<!--<div ng-controller="echartColumnControllerB3" class="liBottomRight" id="containerB2" style="width:50%;height:100px;position: absolute;bottom: 5%;right: 0px"></div>-->
+                    </div>
+                </li>
+
+                <!--<li>
+                    <div class="liBottom">
+                        &lt;!&ndash;<span class="liSpan liSpan4">利润</span>&ndash;&gt;
+                        <p class="pWord">预算达成率</p>
+                        <div class="liBottomLeft">
+                            <p id="lirun">{{yusuandacheng}}%</p>
+                        </div>
+                        <div class="liBottomRight bcimg" style="    width: 35%;
+    height: 80px;
+    position: absolute;
+    right: 0px;
+    top: 51px;
+    background: url(img/bcimg/shangye.png) no-repeat;
+    background-size: 82% 93%;
+    opacity: .2;"></div>
+						&lt;!&ndash;<div ng-controller="echartColumnControllerB4" class="liBottomRight" id="containerB3" style="width:35%;height:80px;position: absolute;bottom: 5%;right: 10px"></div>&ndash;&gt;
+                    </div>
+                </li>-->
+				
+				<li>
+                    <div class="liBottom" style="position:relative">
+                        <!--<span class="liSpan liSpan1">投资</span>-->
+                        <p class="pWord">管理规模(亿元)</p>
+                        <div class="liBottomLeft">
+                            <p id="yitouzi1">{{guanli}}</p>
+                        </div>
+                        <div ng-controller="echartColumnControllerB3" class="liBottomRight" id="containerB5" style="width:50%;height:100px;position: absolute;bottom: 5%;right: 0px"></div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+
+        <div class="headerContent" data-ng-hide="contentChanges1" style="height:153px">
+            <ul class="contentUl">
+                
+
+                <li>
+                    <div id="xiangmushu" class="liBottom liBottomActive"  style="position:relative">
+                        <!--<span class="liSpan liSpan2">开发</span>-->
+                        <p class="pWord">在建项目数</p>
+                        <div class="liBottomLeft">
+                            <p id="yikaifa1">{{zaijianxiangmu}}</p>
+                        </div>
+                        <div class="backgroundimg" style="width:35%;height:80px;position:absolute;right:-6px;top:30px;background:url(img/tb2/shuliang.png) no-repeat;background-size:80% 88%;opacity:.8"></div>
+
+                    </div>
+                <li>
+                    <div class="liBottom"  style="position:relative">
+                        <!--<span class="liSpan liSpan3">销售</span>-->
+                        <p class="pWord">新增实投(亿元)</p>
+                        <div class="liBottomLeft">
+                            <p id="yixiaoshoujine1">{{xinzengshitou}}</p>
+                            <!--<span>完成率:</span>-->
+                            <span>*南宁项目已转入资管</span>
+                        </div>
+                        <div class="backgroundimg" style="width:35%;height:80px;position:absolute;right:-6px;top:30px;background:url(img/tb2/huikuan.png) no-repeat;background-size:80% 88%;opacity:.8"></div>
+
+                    </div>
+                </li>
+
+                <li>
+                    <div class="liBottom"  style="position:relative">
+                        <!--<span class="liSpan liSpan4">利润</span>-->
+                        <p class="pWord">累计实投(亿元)</p>
+                        <div class="liBottomLeft">
+                            <p id="lirun1">{{leijishitou}}</p>
+                            <!--<span>完成率:</span>-->
+                            <!--<span>160%</span>-->
+                        </div>
+                        <div class="backgroundimg" style="width:35%;height:80px;position:absolute;right:-6px;top:30px;background:url(img/tb2/huikuan1.png) no-repeat;background-size:80% 88%;opacity:.8"></div>
+
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+
+        <div class="headerContent" data-ng-hide="contentChanges2" style="height:153px">
+            <ul class="contentUl">
+                <li>
+                    <div id="ebitdayield" class="liBottom liBottomActive"  style="position:relative">
+                        <!--<span class="liSpan liSpan1">投资</span>-->
+                        <p class="pWord">EBITDA YIELD</p>
+                        <div class="liBottomLeft">
+                            <p id="yitouzi2">{{ebitda}}%</p>
+                            <!--<span>完成率:</span>-->
+                            <!--<p>5.2%</p>-->
+                        </div>
+                        <div ng-controller="echartColumnControllerZ1" class="liBottomRight" id="containerZ1" style="width:128%;height:100px;position: absolute;bottom: 5%;left: 50%"></div>
+
+                    </div>
+                </li>
+
+                <li>
+                    <div class="liBottom"  style="position:relative">
+                        <!--<span class="liSpan liSpan2">开发</span>-->
+                        <p class="pWord">资产管理规模(亿元)</p>
+                        <div class="liBottomLeft">
+                            <p id="yikaifa2">{{guanliguimo}}</p>
+                            <!--<span>完成率:</span>-->
+                            <!--<span>90%</span>-->
+                        </div>
+                        <div ng-controller="echartColumnControllerZ2" class="liBottomRight" id="containerZ2" style="width:128%;height:100px;position: absolute;bottom: 5%;left: 50%"></div>
+                        
+                    </div>
+                </li>
+
+                <li>
+                    <div class="liBottom"  style="position:relative">
+                        <!--<span class="liSpan liSpan3">销售</span>-->
+                        <p class="pWord">项目个数</p>
+                        <div class="liBottomLeft">
+                            <p id="yixiaoshoujine2">{{xiangmugeshu}}</p>
+                            <!--<span>完成率:</span>-->
+                            <!--<span>108%</span>-->
+                        </div>
+                        <div ng-controller="echartColumnControllerZ3" class="liBottomRight" id="containerZ3" style="width:128%;height:100px;position: absolute;bottom: 5%;left: 50%"></div>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+    <div class="bodyerBusiness">
+        <!--<ul class="bodyerNav">-->
+        <!--<li class="liActive thirdLi" data-ng-click="thirdLi()">权益前</li>-->
+        <!--<li class="fouthLi" data-ng-click="fouthLi()">权益后</li>-->
+        <!--</ul>-->
+
+        <div class="bodyerContent" data-ng-hide="normChanges">
+            <div class="contentLeft">
+                <p style="background-color: #0a9ccc ; -moz-box-shadow:2px 2px #0a9ccc;/*firefox*/
+        -webkit-box-shadow:2px 2px #0a9ccc;/*webkit*/">年度新增锁定(亿元)</p>
+                <!--左下柱图部分-->
+                <div class="contentleftBox" id="zhutu"  ng-controller="echartColumnControllerB" ng-show=xianshi>
+                     <!--style="height: 200px"  -->
+
+                    <!--<div style="height: 300px;width: 400px;border: 1px solid black"></div>-->
+                    <div id="containerB"></div>
+                </div>
+				<div class="contentleftBox" ng-controller="echartColumnControllerZ" ng-hide=xianshi>
+                    <div id="containerZ"></div>
+                </div>
+
+            </div>
+
+            <div class="contentRight" style="position: relative;">
+                <p style="background-color: #0a9ccc ; -moz-box-shadow:2px 2px #0a9ccc;/*firefox*/
+        -webkit-box-shadow:2px 2px #0a9ccc;/*webkit*/">年度新增锁定(亿元)</p>
+                <span class="table_back glyphicon glyphicon-share-alt" style="position:absolute;right: 9%;top: 6.2%;color:white;display: none">
+                    <span style="display: inline-block;position: absolute;width: 30px;top: -2px;left:19px">返回</span>
+                </span>
+                <!--<div class="contentRightBox">-->
+                <table class="contentTable">
+                    <tbody class="tBodyer">
+                    <tr>
+                        <td>分公司</td>
+                        <td>当年实际回款</td>
+                        <td>累计实际回款</td>
+                        <td>当年回款董事会版</td>
+                        <td>累计回款董事会版</td>
+                        <td>当年完成率</td>
+                        <td>累计完成率</td>
+                    </tr>
+                    <tr>
+                        <td><a href="javascript:;">华东区</a></td>
+                        <td>341.8</td>
+                        <td>355.55</td>
+                        <td>201.93</td>
+                        <td>23.64</td>
+                        <td>72%</td>
+                        <td>78%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="javascript:;">华东区</a></td>
+                        <td>341.8</td>
+                        <td>355.55</td>
+                        <td>201.93</td>
+                        <td>23.64</td>
+                        <td>72%</td>
+                        <td>78%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="javascript:;">华西区</a></td>
+                        <td>372.87</td>
+                        <td>517.66</td>
+                        <td>199.09</td>
+                        <td>0.56</td>
+                        <td>35%</td>
+                        <td>98%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="javascript:;">东南区</a></td>
+                        <td>216.56</td>
+                        <td>161.72</td>
+                        <td>193.81</td>
+                        <td>27.37</td>
+                        <td>66%</td>
+                        <td>66%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="javascript:;">北方区</a></td>
+                        <td>193.42</td>
+                        <td>472.3</td>
+                        <td>144.15</td>
+                        <td>17.2</td>
+                        <td>26%</td>
+                        <td>86%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="javascript:;">上海区</a></td>
+                        <td>129.88</td>
+                        <td>102.64</td>
+                        <td>130.27</td>
+                        <td>19.2</td>
+                        <td>11%</td>
+                        <td>81%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="javascript:;">华南区</a></td>
+                        <td>180.14</td>
+                        <td>159.2</td>
+                        <td>104.33</td>
+                        <td>15.09</td>
+                        <td>89%</td>
+                        <td>99%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="javascript:;">华中区</a></td>
+                        <td>209.1</td>
+                        <td>216.75</td>
+                        <td>101.22</td>
+                        <td>34.16</td>
+                        <td>67%</td>
+                        <td>67%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="javascript:;">安德</a></td>
+                        <td>29.62</td>
+                        <td>52.19</td>
+                        <td>29.47</td>
+                        <td>11.42</td>
+                        <td>38%</td>
+                        <td>78%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="javascript:;">深莞惠区</a></td>
+                        <td>24.7</td>
+                        <td>18.57</td>
+                        <td>7.25</td>
+                        <td>0</td>
+                        <td>25%</td>
+                        <td>45%</td>
+                    </tr>
+                    <tr>
+                        <td><a href="javascript:;">总部</a></td>
+                        <td>3.29</td>
+                        <td>3.29</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td><a href="javascript:;">总部</a></td>
+                        <td>3.29</td>
+                        <td>3.29</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td><a href="javascript:;">总部</a></td>
+                        <td>3.29</td>
+                        <td>3.29</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>合计</td>
+                        <td>1,701.4</td>
+                        <td>2,039.88</td>
+                        <td>1,111.53</td>
+                        <td>148.65</td>
+                        <td>88%</td>
+                        <td>96%</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <!--</div>-->
+
+            </div>
+
+        </div>
+    </div>
+</div>
+       <!-- <div class="bodyerContent1" data-ng-hide="normChanges1" style="display: none;">权益后页面</div>
+
+
+        <div class="footerNorm">
+            <div class="pageCenter">
+                <ul>
+                    <li>《</li>
+                    <li>〈</li>
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                    <li>5</li>
+                    <li>6</li>
+                    <li>〉</li>
+                    <li>》</li>
+                </ul>
+            </div>
+            <div class="pageLeft">
+                <span>行数</span>
+                <span>1-10</span>
+                <div class="pageLeftL">
+                    (<span class="sumSpan">131</span>总行数)
+                </div>
+            </div>
+        </div>
+
+    </div>-->

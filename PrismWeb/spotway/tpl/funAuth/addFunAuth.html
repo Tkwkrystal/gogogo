@@ -1,0 +1,121 @@
+<div>
+    <div class="panel-heading">
+     功能新增
+    </div>
+    <div class="line line-dashed b-b line-lg pull-in"></div>
+    <form class="form-horizontal ng-pristine ng-valid ng-valid-required" method="get" name="myForm">
+        <div class="form-group">
+          <label class="col-sm-2 control-label" >功能名称</label>
+          <div class="col-sm-7">
+            <input type="text" class="form-control" placeholder="请输入功能名称" data-ng-model="funAuth1.title" name="title" required >
+          </div>
+            <label class="col-sm-3 control-label" ng-show="myForm.title.$error.required" style="color:red;text-align: left" >*功能名称不能为空！</label> 
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label" >功能编码</label>
+            <div class="col-sm-7">
+              <input type="text" class="form-control" placeholder="请输入功能编码" data-ng-model="funAuth1.code" name="code" data-ng-change="validateCode()"  required >
+            </div>
+              <label class="col-sm-3 control-label" ng-show="myForm.code.$error.required" style="color:red;text-align: left" >*功能编码不能为空！</label> 
+          </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label" >功能类型</label>
+            <div class="col-sm-7" style="text-align: center">
+                <label class="checkbox-inline">
+                    <input type="radio" name="type" value="1" data-ng-model='funAuth.nav_type' data-ng-checked="true"> 系统功能
+                </label>
+                <label class="checkbox-inline">
+                    <input type="radio" name="type" value="2" data-ng-model='funAuth.nav_type'> 第三方插件
+                </label>
+                <label class="checkbox-inline">
+                    <input type="radio" name="type" value="3" data-ng-model='funAuth.nav_type'> 图表
+                </label>
+            </div>
+        </div>
+
+        <div class="form-group" data-ng-show="funAuth.nav_type==1">
+            <label class="col-sm-2 control-label" >系统功能</label>
+            <div class="col-sm-7">
+                <select class="form-control ng-pristine ng-valid"  data-ng-model="sysList_url"  ng-options="s.title for s in systemLists" >
+                    <!-- <option value="">请选择系统功能</option> -->
+                    <!-- <option data-ng-repeat=" sysList in systemList"  value="{{sysList.url}}">{{sysList.title}}</option> -->
+                </select>
+            </div>
+        </div>
+        <div class="form-group" data-ng-show="funAuth.nav_type==2">
+            <label class="col-sm-2 control-label" >第三方地址</label>
+            <div class="col-sm-7">
+                <input type="text" class="form-control" placeholder="请输入第三方地址" data-ng-model="third_url"  >
+            </div>
+            <!--<label class="col-sm-3 control-label"  data-ng-hide="navNameTest"style="color:red;text-align: left" >*第三方地址不能为空！</label>-->
+        </div> 
+        <div class="form-group" data-ng-show="funAuth.nav_type==3">
+            <label class="col-sm-2 control-label" >数据源名称</label>
+            <div class="col-sm-7">
+                <select class="form-control ng-pristine ng-valid"  data-ng-model="dashboardList_url"  ng-options="s.title for s in dashboardLists"  >
+                    <!-- <option value="">请选择数据源</option> -->
+                    <!-- <option data-ng-repeat=" dashboardList in dashboardLists"   value="{{dashboardList.database}}">{{dashboardList.title}}</option> -->
+                </select>
+            </div>
+            <!--<label class="col-sm-3 control-label"  data-ng-hide="navNameTest"style="color:red;text-align: left" >*第三方地址不能为空！</label>-->
+        </div>
+        <div class="line line-dashed b-b line-lg pull-in"></div>
+        <div class="form-group" style="margin:0px auto">
+            <div class="panel panel-default">
+            <div class="panel-heading">
+              <span >权限项</span>
+              <div style="float: right;margin-right: 20px;color:#8acdea">
+               
+                
+                <span class="dropdown open">
+            <a href="" class="dropdown-toggle" aria-haspopup="true" aria-expanded="true">
+              <span style="    margin-right: 9px;color:#8acdea">新增行</span>
+            </a>
+            <span data-ng-click="deleteItem()">删除行</span>
+            <!-- dropdown -->
+            <div class="dropdown-menu w-xl animated fadeInUp" style="width:200px">
+              <div class="panel bg-white">
+                <div class="list-group">
+                    <a href="" class="media list-group-item" data-ng-repeat="auth in authList" data-ng-click="chooseAuth(auth)">{{auth.name}}</a>
+                </div>
+              </div>
+            </div>
+            <!-- / dropdown -->
+          </span>
+              </div>
+            </div>
+            <div class="table-responsive">
+            <table class="table table-striped b-t b-light">
+                <thead>
+                <tr>
+                    <th style="width:20px;">
+                    <label class="i-checks m-b-none" >
+                        <input type="checkbox" name="checkAllItems"  data-ng-click="chooseALLs(funAuth.auths)"><i></i>
+                    </label>
+                    </th>
+                    <th>序号</th>
+                    <th>编码</th>
+                    <th>功能名称</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr data-ng-repeat="item in funAuth.auths" >
+                    <td><label class="i-checks m-b-none"><input type="checkbox" name="check" data-ng-click="chooseOne(item,$index)"><i></i></label></td>
+                    <td>{{$index+1}}</td>
+                    <td>{{item.code}}</td>
+                    <td>{{item.name}}</td>
+                </tr>                
+                </tbody>
+            </table>
+            </div>
+        </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-12 col-sm-offset-9">
+            <button type="submit" class="btn btn-success" ng-disabled="myForm.title.$dirty && myForm.title.$invalid ||  
+            myForm.code.$dirty && myForm.code.$invalid" data-ng-click="save()">保存</button>
+            <button type="submit" class="btn btn-default" data-ng-click="closeThisDialog()">取消</button>
+          </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,295 @@
+<div data-ng-controller="pingAnIndexController" class="pingAn">
+<div  ng-controller="echartMapController">
+    <!--头部header部分！-->
+    <div class="header">
+        <ul class="headerUl">
+            <li>
+                <div class="liContent">
+                    <div class="contentTop contentTopActive contentChanges" id="haiwaitiao">
+                        <div class="topLeft topLeft1">
+                            <span class="spanBj1"></span>
+                        </div>
+                        <div class="topRight">
+                            <p class="pFont">累计已投资额(亿元)</p>
+                            <span class="pNumber pNumber1">3,374.28</span>
+                        </div>
+                    </div>
+                    <!--<div class="contentBottom contentChanges">-->
+                    <!--<div class="topLeft topLeft1">-->
+                    <!--<span class="spanBj1"></span>-->
+                    <!--</div>-->
+                    <!--<div class="topRight">-->
+                    <!--<p class="pFont">累计已投资额(亿)</p>-->
+                    <!--<span class="pNumber pNumber2">3,374.28</span>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                </div>
+            </li>
+            <li>
+                <div class="liContent">
+                    <div class="contentTop contentChanges">
+                        <div class="topLeft topLeft2">
+                            <span class="spanBj2"></span>
+                        </div>
+                        <div class="topRight">
+                            <p class="pFont">当年累计已投资额(亿元)</p>
+                            <span class="pNumber pNumber3">1,029.28</span>
+                        </div>
+                    </div>
+                    <!--<div class="contentBottom contentChanges">-->
+                    <!--<div class="topLeft topLeft2">-->
+                    <!--<span class="spanBj2"></span>-->
+                    <!--</div>-->
+                    <!--<div class="topRight">-->
+                    <!--<p class="pFont">当年累计已投资额(亿)</p>-->
+                    <!--<span class="pNumber pNumber4">1,029.28</span>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                </div>
+            </li>
+            <li>
+                <div class="liContent">
+                    <div class="contentTop contentChanges">
+                        <div class="topLeft topLeft3">
+                            <span class="spanBj3"></span>
+                        </div>
+                        <div class="topRight">
+                            <p class="pFont">已投项目数(个)</p>
+                            <span class="pNumber pNumber5"></span>
+                        </div>
+                    </div>
+                    <!--<div class="contentBottom contentChanges">-->
+                    <!--<div class="topLeft topLeft3">-->
+                    <!--<span class="spanBj3"></span>-->
+                    <!--</div>-->
+                    <!--<div class="topRight">-->
+                    <!--<p class="pFont">已投项目数(个)</p>-->
+                    <!--<span class="pNumber pNumber6">334</span>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                </div>
+            </li>
+            <li>
+                <div class="liContent">
+                    <div class="contentTop contentChanges">
+                        <div class="topLeft topLeft4">
+                            <span class="spanBj4"></span>
+                        </div>
+                        <div class="topRight">
+                            <p class="pFont">累计已投面积(万方)</p>
+                            <span class="pNumber pNumber7">2,967.41</span>
+                        </div>
+                    </div>
+                    <!--<div class="contentBottom contentChanges">-->
+                    <!--<div class="topLeft topLeft4">-->
+                    <!--<span class="spanBj4"></span>-->
+                    <!--</div>-->
+                    <!--<div class="topRight">-->
+                    <!--<p class="pFont">累计已投面积(万方)</p>-->
+                    <!--<span class="pNumber pNumber8">2,967.41</span>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <!--中间分割部分！-->
+    <div class="bodyer">
+        <div class="bodyerContent" style="position:relative">
+            <span class="bodyerSpanBj" data-ng-click="tiaozhuan()"></span>
+            <span  class="bodyerSpan" >累计已投资额(亿元)</span>
+            <div class="btn-group" style="height: 24px;;position: absolute;left:22%;top:18%;z-index: 3" >
+                <button id="b1" type="button" class="btn btn-default"  style="height: 25px;padding: 3px 12px;border-radius: 5px" onclick="zhongguo()"   data-ng-click="chengeCont()"   >中国</button>
+                <button id="b2" type="button" class="btn btn-default" style="height: 25px;padding: 3px 12px;border-radius: 5px;background-color: #d8e1e3"  data-ng-click="chengeCont1()" >海外</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!--底部footer部分！-->
+    <div class="footer">
+        <!--左边地图部分！-->
+        <div class="footerLeft">
+
+            <div id="main"  style="position:absolute;height: 45%;width: 50%; visibility:visible" ></div>
+            <div id="main2"   style="height: 100%;width: 95%; visibility:hidden"></div>
+        </div>
+        <!--右边展开部分！-->
+        <div class="footerRight">
+            <ul class="causeUl1" style="display: block" id="cause1" >
+                <li class="firstLi">
+                    <span>事业部</span>
+                </li>
+                <li>
+                    <span class="sp1">开发投资事业部</span>
+                    <a class="details" id="kaifatouzi">详情</a>
+                    <!--<span class="spanMark" ng-click="dropDown()">></span>-->
+                    <span class="spanPercent spanPercent1">92%</span>
+                    <div class="bottomBox">
+                        <div id="topBox7" class="topBox topBoxTs"></div>
+                    </div>
+
+                    <!--<ul class="causeUl2" data-ng-show="causeShow">
+                        <li>
+                            <span class="spanUl1">商住合作开发</span>
+                            <span class="spanUl2">92%</span>
+                        </li>
+                    </ul>-->
+                </li>
+                <li style="background-color: #E6E6E6;" class="jianhao" data-ng-click="showshiyebu=!showshiyebu">
+                    <span class="sp1">商业事业部</span>
+                    <span class="glyphicon glyphicon-plus" aria-hidden="true" style="cursor:pointer;font-size: 12px;margin-left: 47px;"></span>
+                    <a class="details" id="shangyeshiyebu" >详情</a>
+                    <!--<span class="spanMark">></span>-->
+                    <span class="spanPercent spanPercent2">96%</span>
+                    <div class="bottomBox">
+                        <div id="topBox1" class="topBox1 topBoxTs"></div>
+                    </div>
+                </li>
+                <!--spanPercent9商业开发建设-->
+                <li ng-show="showshiyebu">
+                    <span class="sp1small" style="margin-left:36px">商业开发建设</span>
+                    <!--<a class="details" href="#/app/pcBusiness">详情</a>-->
+                    <!--<span class="spanMark" ng-click="dropDown()">></span>-->
+                    <span class="spanPercent spanPercent9" style="margin-right: 65px">92%</span>
+                </li>
+                <!--spanPercent10商业资产管理-->
+                <li style="background-color: #E6E6E6;" ng-show="showshiyebu">
+                    <span class="sp1small" style="margin-left:36px">商业资产管理</span>
+                    <!--<a class="details" href="#/app/pcBusiness">详情</a>-->
+                    <!--<span class="spanMark">></span>-->
+                    <span class="spanPercent spanPercent10" style="margin-right: 65px">96%</span>
+                </li>
+                <li>
+                    <span class="sp1">养生度假事业部</span>
+                    <a class="details" id="yangshengdujia" >详情</a>
+                    <!--<span class="spanMark">></span>-->
+                    <span class="spanPercent spanPercent3">87%</span>
+                    <div class="bottomBox">
+                        <div id="topBox2" class="topBox2 topBoxTs"></div>
+                    </div>
+                </li>
+                <li style="background-color: #E6E6E6;">
+                    <span class="sp1">城市发展事业部</span>
+                    <a class="details" style="background-color: #A5B29D;cursor:default">详情</a>
+                    <!--<span class="spanMark">></span>-->
+                    <span class="spanPercent spanPercent4">59%</span>
+                    <div class="bottomBox">
+                        <div id="topBox3" class="topBox3 topBoxTs"></div>
+                    </div>
+                </li>
+
+                <li>
+                    <span class="sp1 jianhao1" data-ng-click="showshiyebu1=!showshiyebu1">策略及海外事业部</span>
+                    <span id="xiangqin1" class="glyphicon glyphicon-plus" aria-hidden="true" style="cursor:pointer;font-size: 12px;margin-left: 5px;" data-ng-click="showshiyebu1=!showshiyebu1"></span>
+                    <a class="details" id="xiangqin" style="background-color: #A5B29D;cursor:default">详情</a>
+                    <!--<span class="spanMark">></span>-->
+                    <span class="spanPercent spanPercent6 jianhao1" data-ng-click="showshiyebu1=!showshiyebu1">64%</span>
+                    <div class="bottomBox jianhao1" data-ng-click="showshiyebu1=!showshiyebu1">
+                        <div class="topBox5 topBoxTs"></div>
+                    </div>
+                </li>
+                <!--spanPercent11公司层面可转债-->
+                <li ng-show="showshiyebu1">
+                    <span class="sp1small" style="margin-left:36px">公司层面可转债</span>
+                    <!--<a class="details" href="#/app/pcNorm">详情</a>-->
+                    <!--<span class="spanMark" ng-click="dropDown()">></span>-->
+                    <span class="spanPercent spanPercent11" style="margin-right: 65px">92%</span>
+                </li>
+                <!--spanPercent12公司层面股权-->
+                <li style="background-color: #E6E6E6;" ng-show="showshiyebu1">
+                    <span class="sp1small" style="margin-left:36px">公司层面股权</span>
+                    <!--<a class="details" href="#/app/pcBusiness">详情</a>-->
+                    <!--<span class="spanMark">></span>-->
+                    <span class="spanPercent spanPercent12" style="margin-right: 65px">96%</span>
+                </li>
+                <!--spanPercent13海外合作开发-->
+                <li ng-show="showshiyebu1">
+                    <span class="sp1small" style="margin-left:36px">海外合作开发</span>
+                    <!--<a class="details" href="#/app/pcNorm">详情</a>-->
+                    <!--<span class="spanMark" ng-click="dropDown()">></span>-->
+                    <span class="spanPercent spanPercent13" style="margin-right: 65px">92%</span>
+                </li>
+                <li class="jianhao"  style="background-color: #E6E6E6;" data-ng-click="showshiyebu3=!showshiyebu3" >
+                    <span class="sp1">金融产品事业部</span>
+                    <span class="glyphicon glyphicon-plus" aria-hidden="true" style="cursor:pointer;font-size: 12px;margin-left: 19px;"></span>
+                    <a class="details" id="jinrongchanpin">详情</a>
+                    <!--<span class="spanMark">></span>-->
+                    <span class="spanPercent spanPercent7">87%</span>
+                    <div class="bottomBox">
+                        <div class="topBox6 topBoxTs"></div>
+                    </div>
+                </li>
+                <!--spanPercent14保险金融-->
+                <li ng-show="showshiyebu3">
+                    <span class="sp1small" style="margin-left:36px">保险金融</span>
+                    <!--<a class="details" href="#/app/pcFinance">详情</a>-->
+                    <!--<span class="spanMark">></span>-->
+                    <span class="spanPercent spanPercent14" style="margin-right: 65px">96%</span>
+                </li>
+                <li ng-show="showshiyebu3" style="background-color: #E6E6E6;">
+                    <span class="sp1small" style="margin-left:36px;">开发金融</span>
+                    <!--<a class="details" href="#/app/pcFinance">详情</a>-->
+                    <!--<span class="spanMark">></span>-->
+                    <span class="spanPercent spanPercent15" style="margin-right: 65px">96%</span>
+                </li>
+                <li>
+                    <span class="sp1">工业物流事业部</span>
+                    <a class="details" id="gongyewuliu">详情</a>
+                    <!--<span class="spanMark">></span>-->
+                    <span class="spanPercent spanPercent5">77%</span>
+                    <div class="bottomBox">
+                        <div class="topBox4 topBoxTs"></div>
+                    </div>
+                </li>
+            </ul>
+            <ul class="causeUl1" id="cause2" style="display: none;" >
+                <li class="firstLi">
+                    <span>事业部</span>
+                </li>
+                <li>
+                    <span style=" color: #2F87AF;" class="sp8 jianhao1" data-ng-click="showshiyebu2=!showshiyebu2" >策略及海外事业部</span>
+                    <span  id="xiangqin2" class="glyphicon glyphicon-plus" aria-hidden="true" style="cursor:pointer;font-size: 12px;margin-left: 12px;"  data-ng-click="showshiyebu2=!showshiyebu2"></span>
+                    <a class="details" style="background-color: #A5B29D;cursor:default" >详情</a>
+                    <!--<span class="spanMark" ng-click="dropDown()">></span>-->
+                    <span class="spanPercent spanPercent8 jianhao1" style="margin-right: 15px" data-ng-click="showshiyebu2=!showshiyebu2">92%</span>
+                    <div class="bottomBox jianhao1" data-ng-click="showshiyebu2=!showshiyebu2">
+                        <div id="topBox" class="topBox5 topBoxTs"></div>
+                    </div>
+
+                    <!--<ul class="causeUl2" data-ng-show="causeShow">
+                        <li>
+                            <span class="spanUl1">商住合作开发</span>
+                            <span class="spanUl2">92%</span>
+                        </li>
+                    </ul>-->
+                </li>
+
+                <!--spanPercent11公司层面可转债-->
+                <li ng-show="showshiyebu2" style="background-color: #E6E6E6;">
+                    <span class="sp1small" style="margin-left:36px">公司层面可转债</span>
+                    <!--<a class="details" href="#/app/pcHoliday">详情</a>-->
+                    <!--<span class="spanMark" ng-click="dropDown()">></span>-->
+                    <span class="spanPercent spanPercent11" style="margin-right: 67px">92%</span>
+                </li>
+                <!--spanPercent12公司层面股权-->
+                <li ng-show="showshiyebu2">
+                    <span class="sp1small" style="margin-left:36px">公司层面股权</span>
+                    <!--<a class="details" href="#/app/pcHoliday">详情</a>-->
+                    <!--<span class="spanMark">></span>-->
+                    <span class="spanPercent spanPercent12" style="margin-right: 67px">96%</span>
+                </li>
+                <!--spanPercent13海外合作开发-->
+                <li ng-show="showshiyebu2" style="background-color: #E6E6E6;">
+                    <span class="sp1small" style="margin-left:36px">海外合作开发</span>
+                    <!--<a class="details" href="#/app/pcHoliday">详情</a>-->
+                    <!--<span class="spanMark" ng-click="dropDown()">></span>-->
+                    <span class="spanPercent spanPercent13" style="margin-right: 67px">92%</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+</div>

@@ -1,0 +1,109 @@
+<div>
+    <div class="panel-heading">
+     添加用户
+    </div>
+    <div class="line line-dashed b-b line-lg pull-in"></div>
+    <form class="form-horizontal ng-pristine ng-valid ng-valid-required" method="get">
+        <div class="form-group">
+          <label class="col-sm-2 control-label" >用户名</label>
+          <div class="col-sm-6">
+            <input type="text" class="form-control" placeholder="请输入用户名称" data-ng-model="user.userName"data-ng-change="validateUserName()"  >
+          </div>
+            <label class="col-sm-3.5 control-label"  data-ng-hide="userNameTest"style="color:red;text-align: left" >*用户名不能为空！</label>
+        </div>
+        <!--<div class="form-group">-->
+          <!--<label class="col-sm-2 control-label" >手机号</label>-->
+          <!--<div class="col-sm-8">-->
+            <!--<input type="text" class="form-control" placeholder="请输入手机号码"  data-ng-model="user.phone"  data-ng-change="validatePhone()"  >-->
+          <!--</div>-->
+          <!--<label class="col-sm-2 control-label" data-ng-hide="phoneTest" style="color:red;text-align: left" >*手机号不匹配！</label>-->
+        <!--</div>-->
+        <div class="form-group">
+          <label class="col-sm-2 control-label" >邮箱</label>
+          <div class="col-sm-6">
+            <input type="text" class="form-control" placeholder="请输入邮箱号"  data-ng-model="user.email"  data-ng-change="validateEmail()" >
+          </div>
+          <label class="col-sm-1.5 control-label" style="color:red;text-align: left" data-ng-hide="emailTest" >*邮箱号输入有误!</label>
+          <label class="col-sm-2.5 control-label" style="color:red;text-align: left" data-ng-hide="emailTest" >格式如:##@##.###</label>
+        </div>
+        <!--<div class="form-group">-->
+          <!--<label class="col-sm-2 control-label">组织</label>-->
+          <!--<div class="col-sm-8">-->
+            <!--<select name="account" class="form-control m-b" selected="请选择所属组织">-->
+              <!--<option value="option 1">option 1</option>-->
+              <!--<option value="option 2">option 2</option>-->
+              <!--<option value="option 3">option 3</option>-->
+              <!--<option value="option 4">option 4</option>-->
+            <!--</select>-->
+          <!--</div>-->
+        <!--</div>-->
+
+
+        <!--<div class="form-group">
+            <label class="col-sm-2 control-label">用户图像</label>
+            <div style="position: relative">
+                <label class="col-sm-2 control-label" style="text-align: right">点击上传图片</label>
+                <input type="file" id="myFile" file-model="myFile" accept="文件:image/gif,image/jpeg,image/jpg,image/png" style="position: absolute;top: 7px;left: 178px;opacity: 0;width: 76px;">
+            </div>
+            <label class="col-sm-8 control-label" style="color:red;text-align: left">(*图片大小小于1M)</label>
+        </div>-->
+       <!-- <div class="form-group">
+            <div class="col-sm-12">
+                <img ng-src="{{imageSrc}}" style="height: 100px;margin: 0 0 0 236px;border-radius: 50%;">
+            </div>
+        </div>-->
+
+
+        <div class="form-group" style="margin-bottom: 0;">
+          <label class="col-sm-2 control-label">用户角色</label>
+          <div class="col-sm-8">
+            <div class="radio" data-ng-repeat="role in roleList" style="float: left;">
+              <label>
+                <input type="radio" name="optionsRadios"  data-ng-model="user.roleId" data-ng-checked="" data-ng-value="role._id" >
+              {{role.name}}
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-2 control-label"></label>
+          <div class="col-sm-8">
+            <div class="checkbox">
+              <label class="i-checks">
+                <input type="checkbox" data-ng-checked="showPWD" data-ng-model="showPWD" value="">
+                <i></i>
+                设置密码
+              </label>
+            </div>
+          </div>
+        
+        </div>
+        <div class="line line-dashed b-b line-lg pull-in"></div>
+        <div class="form-group" data-ng-show="showPWD">
+          <label class="col-sm-2 control-label" >初始密码</label>
+          <div class="col-sm-6">
+            <input type="password" class="form-control" placeholder="请输入用户登录初始密码,至少8位" data-ng-model="user.password"  data-ng-change="validatePWD()">
+          </div>
+            <label class="col-sm-1.5 control-label" style="color:red;text-align: left" data-ng-hide="PWDTest"  >*密码有误！</label>
+            <label class="col-sm-2.5 control-label" style="color:red;text-align: right" data-ng-hide="PWDTest"  >必需包涵字母、数字、特殊符</label>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 control-label"></label>
+          <div class="col-sm-8">
+            <div class="checkbox">
+              <label class="i-checks">
+                所属角色
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="line line-dashed b-b line-lg pull-in"></div>
+        <div class="form-group">
+          <div class="col-sm-12 col-sm-offset-9">
+            <button type="submit" class="btn btn-success" data-ng-show="userNameTest&&emailTest&&(showPWD?PWDTest:!PWDTest)" data-ng-click="save()">保存</button>
+            <button type="submit" class="btn btn-default" data-ng-click="closeThisDialog()">取消</button>
+          </div>
+        </div>
+    </form>
+</div>

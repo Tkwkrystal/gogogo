@@ -1,0 +1,232 @@
+.pingAn{min-width: 890px;}
+
+.headerInsurance{
+    min-width: 890px;
+    width: 100%;
+    height: auto;
+}
+.headerInsurance ul.headerNav{
+    width: 95%;
+    margin: 0 auto;
+    height: 35px;
+    margin-top: 10px;
+    background-color: transparent;
+}
+.headerInsurance ul.headerNav li{
+    float: left;
+    font-size: 16px;
+    width: 112px;
+    height: 34px;
+    line-height: 34px;
+    text-align: center;
+    border: 1px solid #D2D2D2;
+    background-color: #D2D2D2;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    color:#FEFEFE;
+    border-bottom: 0;
+    cursor: pointer;
+}
+.headerInsurance ul.headerNav li.firstLi{
+    margin: 0 8px 0 20px;
+}
+.headerInsurance ul.headerNav li.firstLi:nth-child(2){
+    margin-left: -3px;
+}
+.headerInsurance ul.headerNav li.firstLi:nth-child(1){
+    background: #D2D2D2;
+	color: white;
+}
+.headerInsurance ul.headerNav li.liActive{
+    background-color: #FEFEFE;
+    color:#EB5405;
+}
+
+.headerInsurance .headerContent{
+    width: 95%;
+    height: 160px;
+    margin: -1px auto 0;
+    background-color: #FEFEFE;
+    margin-bottom: 16px;
+    border-radius: 6px;
+}
+.headerInsurance .headerContent ul.contentUl{
+    width: 100%;
+    height: 100%;
+}
+.headerInsurance .headerContent ul.contentUl li{
+    width: 25%;
+    height: 100%;
+    float: left;
+}
+.headerInsurance .headerContent ul.contentUl li .liBottom{
+    width: 95%;
+    height: 126px;
+    margin: 18px 6.5% 0;
+    position: relative;
+    border: 1px solid #EAEAEA;
+    border-radius: 10px;
+    cursor:pointer;
+}
+.liBottomActive{
+    border: 3px solid #EB5405 !important;
+}
+.headerInsurance .headerContent ul.contentUl li .liBottom p.pWord{
+    font-size: 16px;
+    color: black;
+    margin-top:16px;
+    margin-left: 6%;
+    margin-bottom: 18px;
+}
+.headerInsurance .headerContent ul.contentUl li .liBottom .liBottomLeft{
+    margin-left: 6%;
+    float: left;
+}
+.headerInsurance .headerContent ul.contentUl li .liBottom .liBottomLeft p{
+    width: 100%;
+    font-size: 24px;
+    color: #EB5405;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+.headerInsurance .headerContent ul.contentUl li .liBottom .liBottomLeft span{
+    color:black;
+}
+.headerInsurance .headerContent ul.contentUl li .liBottom .liBottomRight{
+    margin-right: 4%;
+    float: right;
+    margin-top: -25px;
+    /*border: 1px solid red;*/
+}
+
+
+
+
+
+.bodyerInsurance{
+    min-width: 890px;
+    width: 100%;
+    height: auto;
+}
+.bodyerInsurance ul.bodyerNav{
+    width: 95%;
+    margin: 0 auto;
+    /*height: 30px;*/
+    margin-top: 10px;
+    background-color: transparent;
+}
+
+.bodyerInsurance .bodyerContent{
+    width: 95%;
+    height: 535px;
+    margin: -1px auto 0;
+    background-color: #FEFEFE;
+    margin-bottom: 16px;
+    border-radius: 6px;
+}
+
+.bodyerInsurance .bodyerContent .contentRight{
+    width: 100%;
+    height: 536px;
+    padding-top: 22px;
+    box-sizing: border-box;
+    /*float: right;*/
+    /*border: 1px solid red;*/
+}
+.bodyerInsurance .bodyerContent .contentRight p{
+    margin-left: 2.5%;
+    margin-bottom: 20px;
+    width: 95%;
+    height: 36px;
+    line-height: 36px;
+    padding-left: 22px;
+    box-sizing: border-box;
+    color:#fff;
+    background-color: #0a9ccc;
+    font-size: 16px;
+    border-radius: 4px;
+    -moz-box-shadow:2px 2px #0DAAFB;/*firefox*/
+    -webkit-box-shadow:2px 2px #0DAAFB;/*webkit*/
+    box-shadow:2px 2px #0DAAFB;/*opera或ie9*/
+}
+
+.bodyerInsurance .bodyerContent .contentRight table.contentTable{
+    margin-left: 2.5%;
+    width: 95%;
+    height: 380px;
+    padding-left: 22px;
+    box-sizing: border-box;
+    overflow: hidden;
+    /*border: 1px solid #ADADAD;*/
+}
+.bodyerInsurance .bodyerContent .contentRight table.contentTable tbody.tBodyer{
+    display: block;
+    /*overflow: scroll;*/
+    overflow-y: scroll;
+    width: 100%;
+    height: 420px;
+}
+.bodyerInsurance .bodyerContent .contentRight table.contentTable .tBodyer tr{
+    height: 42px;
+    line-height: 20px;
+    text-align: center;
+    /*font-size: 15px;*/
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    /*color:black;*/
+}
+.bodyerInsurance .bodyerContent .contentRight table.contentTable .tBodyer tr td{
+    border-left: 1px solid #DDDBDE;
+    margin-left: -1px;
+    box-sizing: border-box;
+    color:#58666e;
+}
+.bodyerInsurance .bodyerContent .contentRight table.contentTable thead tr:first-child{
+    text-align: center;
+    color:black;
+    background-color: #DCDEDD;
+    font-weight: bold;
+    color: black;
+}
+.bodyerInsurance .bodyerContent .contentRight table.contentTable .tBodyer tr td:first-child{
+    text-align: center;
+    border-left: 0;
+width: 30%;
+}
+.bodyerInsurance .bodyerContent .contentRight table.contentTable .tBodyer tr:nth-child(2n-2){
+    background-color: #E6E6E6;
+}
+
+.bodyerInsurance .bodyerContent .contentRight .footerInsurance{
+    width: 100%;
+    height: 70px;
+}
+.bodyerInsurance .bodyerContent .contentRight .footerInsurance ul.pageCenter{
+    width: 250px;
+    height: 30px;
+    line-height: 30px;
+    margin-left: 40%;
+    /*border: 1px solid red;*/
+    margin-top: 40px;
+    float: left;
+}
+.bodyerInsurance .bodyerContent .contentRight .footerInsurance ul.pageCenter li{
+    float: left;
+    width: 10%;
+    font-size: 15px;
+    cursor: pointer;
+}
+.bodyerInsurance .bodyerContent .contentRight .footerInsurance ul.pageCenter li.liActive{
+    color: black;
+}
+.bodyerInsurance .bodyerContent .contentRight .footerInsurance .pageLeft{
+    float: right;
+    margin-right: 2.5%;
+    width: 142px;
+    height: 30px;
+    line-height: 30px;
+    margin-top: 40px;
+    /*border: 1px solid red;*/
+    font-size: 15px;
+}

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Swagger UI</title>
+  <link rel="icon" type="image/png" href="images/favicon-32x32.png" sizes="32x32" />
+  <link rel="icon" type="image/png" href="images/favicon-16x16.png" sizes="16x16" />
+  <link id="favicon" rel="icon" sizes="64x64" />
+  <link href='css/typography.css' media='screen' rel='stylesheet' type='text/css'/>
+  <link href='css/reset.css' media='screen' rel='stylesheet' type='text/css'/>
+  <link href='css/screen.css' media='screen' rel='stylesheet' type='text/css'/>
+  <link href='css/reset.css' media='print' rel='stylesheet' type='text/css'/>
+  <link href='css/print.css' media='print' rel='stylesheet' type='text/css'/>
+  <link href='css/menu.css' media='screen' rel='stylesheet' type='text/css'/>
+  <script src='lib/jquery-1.8.0.min.js' type='text/javascript'></script>
+  <script src='lib/jquery.slideto.min.js' type='text/javascript'></script>
+  <script src='lib/jquery.wiggle.min.js' type='text/javascript'></script>
+  <script src='lib/jquery.ba-bbq.min.js' type='text/javascript'></script>
+  <script src='lib/handlebars-2.0.0.js' type='text/javascript'></script>
+  <script src='lib/underscore-min.js' type='text/javascript'></script>
+  <script src='lib/backbone-min.js' type='text/javascript'></script>
+  <script src='swagger-ui.min.js' type='text/javascript'></script>
+  <script src='lib/highlight.7.3.pack.js' type='text/javascript'></script>
+  <script src='lib/marked.js' type='text/javascript'></script>
+  <script src='lib/swagger-oauth.js' type='text/javascript'></script>
+
+  <!-- Some basic translations -->
+  <!-- <script src='lang/translator.js' type='text/javascript'></script> -->
+  <!-- <script src='lang/ru.js' type='text/javascript'></script> -->
+  <!-- <script src='lang/en.js' type='text/javascript'></script> -->
+
+  <script type="text/javascript">
+    $(function () {
+
+      var url = window.location.search.match(/url=([^&]+)/);
+      if (url && url.length > 1) {
+        url = decodeURIComponent(url[1]);
+      } else {
+        //url = "/api/api-docs.json";
+        url = "/dev/api/swagger/v1";
+      }
+
+
+      // Pre load translate...
+      if(window.SwaggerTranslator) {
+        window.SwaggerTranslator.translate();
+      }
+      window.swaggerUi = new SwaggerUi({
+        url: url,
+        dom_id: "swagger-ui-container",
+        validatorUrl : null,
+        supportedSubmitMethods: ['get', 'post', 'put', 'delete', 'patch'],
+        operationsSorter : mySorter,
+        onComplete: function(swaggerApi, swaggerUi){
+          if(typeof initOAuth == "function") {
+            initOAuth({
+              clientId: "your-client-id",
+              clientSecret: "your-client-secret",
+              realm: "your-realms",
+              appName: "your-app-name",
+              scopeSeparator: ","
+            });
+          }
+
+          if(window.SwaggerTranslator) {
+            window.SwaggerTranslator.translate();
+          }
+
+          $('pre code').each(function(i, e) {
+            hljs.highlightBlock(e)
+          });
+
+          //addApiKeyAuthorization();
+        },
+        onFailure: function(data) {
+          log("Unable to Load");
+        },
+        docExpansion: "none",
+        apisSorter: "alpha",
+        showRequestHeaders: false
+      });
+
+      function addApiKeyAuthorization(){
+        var key = encodeURIComponent($('#input_apiKey')[0].value);
+        if(key && key.trim() != "") {
+            var apiKeyAuth = new SwaggerClient.ApiKeyAuthorization("api_key", key, "query");
+            window.swaggerUi.api.clientAuthorizations.add("api_key", apiKeyAuth);
+            log("added key " + key);
+        }
+      }
+      var methodRank = {
+        "get" : 1,
+        "post" : 2,
+        "put" : 3,
+        "patch" : 4,
+        "delete" : 5
+      };
+
+      //Sort opertaions by method then by length
+      function mySorter(a, b){
+        if (a.method !== b.method){
+          return methodRank[a.method] - methodRank[b.method];
+        }
+        return (a.path.length - b.path.length);
+      }
+
+      $('#input_apiKey').change(addApiKeyAuthorization);
+
+      // if you have an apiKey you would like to pre-populate on the page for demonstration purposes...
+      /*
+        var apiKey = "myApiKeyXXXX123456789";
+        $('#input_apiKey').val(apiKey);
+      */
+
+      window.swaggerUi.load();
+
+        $.get( "/api/users/loggedin", function(user) {
+            if (user && user.firstName) {
+                $('.signout-text').append(" (" + user.firstName + ")");
+                    $('.user-info-icon').append(user.firstName[0].toUpperCase());
+                    $('.user-name').append('Hi, ' + user.firstName);
+                    $('.user-email').append(user.email);
+            }
+        });
+
+      var sisenseImg = 'images/logo_sisense.png';
+      var apiSuffix = " Web API Docs";
+
+      function setLogo(logoUrl) {
+        $(".prism-logo").css('background', 'url' + '(' + (logoUrl) + ') no-repeat');
+      }
+
+      function setIcon(iconUrl) {
+        var sisenseIcon = "/resources/base/images/favicon.ico";
+        iconUrl = (typeof iconUrl === 'undefined') ? sisenseIcon : iconUrl;
+        $('#favicon')[0].href = iconUrl;
+      }
+
+      $.get( "/api/branding", function(branding) {
+        var title = ((branding && branding.pageTitle) ? branding.pageTitle : "Sisense") + apiSuffix;
+        var logo = (branding && branding.logo && branding.logo.desktop && branding.logo.desktop.small) ? branding.logo.desktop.small : sisenseImg;
+        var icon = branding.favicon;
+
+        window.document.title = title;
+        setLogo(logo);
+        setIcon(icon);
+      }).fail(function(err) {
+        window.document.title = "Sisense" + apiSuffix;
+        setLogo(sisenseImg);
+        setIcon(sisenseIcon);
+      });
+
+        $('#appVersion').append('Version: X.X.X.X');
+
+      function log() {
+        if ('console' in window) {
+          console.log.apply(console, arguments);
+        }
+      }
+
+        window.onresize = function(){
+            closeMenu();
+        }
+  });
+
+    function openMenu() {
+        if($('.popup-overlay').length>0 && $('.user-menu').length>0 && $('.triangle-tooltip-wrapper').length>0){
+            if($('.popup-overlay').css('display') === 'none'){
+                $('.user-icon').addClass('active-menu');
+                $('.popup-overlay').css('display', 'block');
+                $('.user-menu').css('display', 'block');
+                $('.triangle-tooltip-wrapper').css('display', 'block');
+            }
+        }
+    }
+
+    function closeMenu() {
+        if($('.popup-overlay').length>0 && $('.user-menu').length>0 && $('.triangle-tooltip-wrapper').length>0){
+            $('.user-icon').removeClass('active-menu');
+            $('.popup-overlay').css('display', 'none');
+            $('.user-menu').css('display', 'none');
+            $('.triangle-tooltip-wrapper').css('display', 'none');
+        }
+    }
+
+    function openDoc() {
+        window.open('https://www.sisense.com/documentation/', '_blank');
+    }
+
+    function openForum() {
+        window.open('https://support.sisense.com/forums/', '_blank');
+    }
+
+  // copied from client side code, $identity service
+  function logout() {
+    $.get('/api/auth/logout', function (result) {
+      window.location.href = result && result.data && result.data != "" ? result.data : '/spotway/#/access/signin';
+    });
+  }
+
+  </script>
+</head>
+
+<body class="swagger-section">
+<div id='prism-header' class="prism-header">
+    <div class="prism-logo">
+    </div>
+    <div class="user-menu-holder" onclick="openMenu()">
+        <div class="nav-item">
+            <div class="user-icon"></div>
+        </div>
+    </div>
+    <div class="toolbar-divider"></div>
+    <div class="navigation">
+        <div class = 'nav-item'>
+            <a class="home" href="/app/main#/home">home</a>
+            <div class="line"></div>
+        </div>
+        <div class = 'nav-item' disabled="disabled">
+            <a class="manage" href="/app/settings#/">admin</a>
+            <div class="line"></div>
+        </div>
+
+    </div>
+</div>
+<div id='prism-toolbar' class="prism-toolbar">
+  <div class="tbar-title">Sisense API Reference</div>
+  <div class="actions-box">
+    <div id="v0-btn" class="version-btn v0-btn"></div>
+    <div id="v1-btn" class="version-btn v1-btn selected"></div>
+  </div>
+</div>
+
+<div id="message-bar" class="swagger-ui-wrap" data-sw-translate>&nbsp;</div>
+<div id="swagger-ui-container" class="swagger-ui-wrap"></div>
+
+<div onclick="closeMenu()" class="popup-overlay" style="display: none; position: absolute; z-index: 3000; width: 100%; height: 100%;"></div>
+<div style="display: none; position: absolute; outline: none; z-index: 3005; right: 15px; top: 45px;" tabindex="-1" class="user-menu " data-triangle-tooltip="">
+    <div class="menu-host ">
+        <div class="menu-item-host " style="position: relative;">
+            <div>
+                <div class="menu-content">
+                    <!-- ngRepeat: item in ctx.items -->
+                    <div class="menu-item user-info-menu-item mi-nonclickable" title=""  data-invalidate-last="">
+                        <!-- ngIf: item.html -->
+                        <div class="">
+                            <div class="user-info-holder">
+                                <div class="user-info-icon"></div>
+                                <div class="user-info">
+                                    <div class="user-name"></div>
+                                    <div class="user-email"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item" title="" data-invalidate-last="" onclick="openDoc()">
+                        <div class="">
+                            <div class="mi-caption " title="">Documentation</div>
+                        </div>
+                    </div>
+                    <div class="menu-item" title="" data-invalidate-last="" onclick="openForum()">
+                        <div class="">
+                            <div class="mi-caption " title="">User Forums</div>
+                        </div>
+                    </div>
+                    <div onclick="logout()" class="menu-item" title="" data-invalidate-last="">
+                        <div class="">
+                            <div class="mi-caption " title="">Sign Out</div>
+                        </div>
+                    </div>
+                    <!--<div class="menu-item  mi-separator" title="" data-invalidate-last="">
+                        <div class="">
+                            <div class="mi-caption" title=""></div>
+                        </div>
+                    </div>
+                    <div class="menu-item  mi-nonclickable" title="" data-invalidate-last="">
+                        <div class="">
+                            <div id="appVersion" class="mi-caption" title=""></div>
+                        </div>
+                    </div>-->
+                </div>
+            </div>
+        </div>
+        <!-- end ngRepeat: ctx in levels -->
+    </div>
+</div>
+<div class="triangle-tooltip-wrapper triangle-tooltip-wrapper-t" style="display: none; top: 45px; right: 8px; width: 30px;">
+    <div style="flex: 0.99 1 auto;"></div>
+    <div class="triangle-tooltip user-menu-triangle-tooltip"></div>
+    <div style="flex: 0.01 1 auto;"></div>
+</div>
+
+</body>
+</html>

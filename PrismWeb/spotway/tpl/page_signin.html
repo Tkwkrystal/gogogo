@@ -1,0 +1,222 @@
+<div class="acc-win" id="acc-win" ng-controller="SigninFormController">
+    <div class="desktop_header">
+        <div class="desktop_logo"></div>
+        <!--<div class="desktop_clear">-->
+            <!--<select name="lang" id="lang" data-ng-model="lang" data-ng-change="selectLang(lang)" class="lang">-->
+                <!--<option value="cn">简体中文</option>-->
+                <!--<option value="en">English</option>-->
+            <!--<select>-->
+        <!--</div>-->
+    </div>
+    <div class="acc-outer">
+        <div class="acc-out-logo" branding="logo.desktop.large" branding-type="logo"></div>
+        <div class="acc-inner-box">
+
+
+            <div class="acc-inner" ng-hide="myhide">
+                <div class="acc-inner">
+                    <div class="acc-inner-h" id="account-header"><div class="acc-header ng-scope">
+                        <div class="acc-h-logo">{{'用户登录'| translate}}</div>
+                    </div>
+                    </div>
+                    <div class="acc-inner-b" id="account-body"><div class="acc-body ng-scope" xmlns="http://www.w3.org/1999/html">
+                        <div class="acc-content login-body-content">
+                            <div class="acc-con-box">
+                                <div name="loginForm" class="ng-pristine ng-valid">
+                                    <div class="input-box">
+                                        <input data-ng-model="username" name="username" id="username" placeholder="{{'用户名/邮箱地址'| translate}}" ng-change="clearError();" tabindex="1" data-ng-keypress="tryApply($event.keyCode === 13)" data-ng-class="{empty: !username.length}" spellcheck="false" class="ng-pristine ng-valid empty">
+                                        <div class="user-img"></div>
+                                        <div class="loginForm_input_close" onclick="onPcClear()"></div>
+                                    </div>
+                                    <div class="input-box">
+                                        <input ng-keyup="enterEvent($event)" type="password" data-ng-model="password" name="password" id="password"  placeholder="{{'密码'| translate}}" ng-change="clearError();" data-ng-keypress="tryApply($event.keyCode === 13)" data-ng-class="{empty: !password.length}" tabindex="2" class="ng-pristine ng-valid empty">
+                                        <div class="pass-img"></div>
+                                    </div>
+                                    <input type="hidden" name="src" value="">
+                                    <input type="hidden" name="isPersistent" value="">
+                                    <div class="bottom-message">
+                                        <!--<a class="ng-binding" data-ng-click="fn()">{{'忘记密码'| translate}}?</a>-->
+                                    </div>
+                                    <input type="submit" class="acc-btn" ng-click="loading || login()" ng-disabled="!isPassworedStoredInBrowser &amp;&amp; (!username || !password || loading)" tabindex="3" value="{{'登录'| translate}}" disabled="disabled">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="login-desktop-error ng-binding accerr" data-ng-class="{accerr: true, error: error}">{{error1}}</div>
+                        <!--<div class="userlearn">{{'loginPage.version_study'| translate}}</div>-->
+                    </div>
+                    </div>
+                </div>
+                <div class="acc-inner-yinying"></div>
+            </div>
+
+
+            <!--<div class="acc-inner" ng-hide="myhide1">-->
+                <!--<div class="acc-inner">-->
+                    <!--<div class="acc-inner-h" id="account-header1">-->
+                        <!--<div class="acc-header ng-scope">-->
+                            <!--<div class="acc-h-logo1">输入邮箱找回密码</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="acc-inner-b" id="account-body1">-->
+                        <!--<div class="acc-body ng-scope" xmlns="http://www.w3.org/1999/html">-->
+                            <!--<div class="acc-content login-body-content">-->
+                                <!--<div class="acc-con-box">-->
+                                    <!--<div name="loginForm" class="ng-pristine ng-valid">-->
+                                        <!--<div class="findPasswdTp"></div>-->
+                                        <!--<form name="myForm" class="bottom-message1">-->
+                                            <!--<input name="phoneMailYz" type="text" ng-pattern="{{phoneMailR}}" ng-change="phoneMailChange(phoneMailData)" ng-model="phoneMailData" placeholder="邮箱地址" required>-->
+                                        <!--</form>-->
+                                        <!--&lt;!&ndash;<div class="login-desktop-error1 accerr" data-ng-class="{accerr: true, error: error}" ng-show="myForm.phoneMailYz.$error.required && myForm.phoneMailYz.$dirty">{{error6}}</div>&ndash;&gt;-->
+                                        <!--<div class="login-desktop-error1 accerr"  ng-show="testCheck">{{error2}}</div>-->
+                                        <!--<a class="acc-btn1-a" href="" data-ng-click="fnBack()">取消</a>-->
+                                        <!--<input type="submit" class="acc-btn1" data-ng-click="fn1()" value="下一步">-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+
+
+            <!--<div class="acc-inner" ng-hide="myhide2">-->
+                <!--<div class="acc-inner">-->
+                    <!--<div class="acc-inner-h" id="account-header2">-->
+                        <!--<div class="acc-header ng-scope">-->
+                            <!--<div class="acc-h-logo1">手机找回密码</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="acc-inner-b" id="account-body2">-->
+                        <!--<div class="acc-body ng-scope" xmlns="http://www.w3.org/1999/html">-->
+                            <!--<div class="acc-content login-body-content">-->
+                                <!--<div class="acc-con-box">-->
+                                    <!--<div name="loginForm" class="ng-pristine ng-valid">-->
+                                        <!--<div class="phoneFindPasswdTp1"></div>-->
+                                        <!--<div class="bottom-message2">-->
+                                            <!--<div class="inputBox">-->
+                                                <!--<input type="text" placeholder="手机验证码">-->
+                                                <!--<button class="smallphone" data-ng-click="phoneClick()" ng-disabled="think">{{phoneValue}}</button>-->
+                                            <!--</div>-->
+                                            <!--<div class="pBox">-->
+                                                <!--<p>提示:收到动态密码信息后，请输入到动态密码框中。</p>-->
+                                                <!--<p>如果在60秒还没有收到，请重新获取手机动态密码。</p>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                        <!--<div class="login-desktop-error2 ng-binding accerr" data-ng-class="{accerr: true, error: error}">{{error3}}</div>-->
+                                        <!--<input type="submit" class="acc-btn2" ng-click="fn2()" value="下一步">-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="acc-inner-yinying"></div>-->
+            <!--</div>-->
+
+
+            <!--<div class="acc-inner" ng-hide="myhide3">-->
+                <!--<div class="acc-inner">-->
+                    <!--<div class="acc-inner-h" id="account-header4">-->
+                        <!--<div class="acc-header ng-scope">-->
+                            <!--<div class="acc-h-logo1">邮箱找回密码</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="acc-inner-b" id="account-body4">-->
+                        <!--<div class="acc-body ng-scope" xmlns="http://www.w3.org/1999/html">-->
+                            <!--<div class="acc-content login-body-content">-->
+                                <!--<div class="acc-con-box">-->
+                                    <!--<div name="loginForm" class="ng-pristine ng-valid">-->
+                                        <!--<div class="mailFindPasswdTp"></div>-->
+                                        <!--<div class="bottom-message2">-->
+                                            <!--<div class="inputBox">-->
+                                                <!--<input type="email" name="email" ng-model="email" required placeholder="邮箱验证码">-->
+                                                <!--<button class="smallmail" data-ng-click="mailClick()" ng-disabled="think1">{{mialValue}}</button>-->
+                                            <!--</div>-->
+                                            <!--<div class="pBox">-->
+                                                <!--<p>提示:收到动态密码信息后，请输入到动态密码框中。</p>-->
+                                                <!--<p>如果在60秒还没有收到，请重新获取手机动态密码。</p>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                        <!--<div class="login-desktop-error2 accerr" data-ng-class="{accerr: true, error: error}">{{error4}}</div>-->
+                                        <!--<input type="submit" class="acc-btn2" data-ng-click="fn3()" value="下一步">-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="acc-inner-yinying"></div>-->
+            <!--</div>-->
+
+
+            <!--<div class="acc-inner" ng-hide="myhide4">-->
+                <!--<div class="acc-inner">-->
+                    <!--<div class="acc-inner-h" id="account-header5">-->
+                        <!--<div class="acc-header ng-scope">-->
+                            <!--<div class="acc-h-logo1">重置密码</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="acc-inner-b" id="account-body5">-->
+                        <!--<div class="acc-body ng-scope" xmlns="http://www.w3.org/1999/html">-->
+                            <!--<div class="acc-content login-body-content">-->
+                                <!--<div class="acc-con-box">-->
+                                    <!--<div name="loginForm" class="ng-pristine ng-valid">-->
+                                        <!--<div class="resetPasswd"></div>-->
+                                        <!--<form name="repeatPasswordForm" class="bottom-message3">-->
+                                            <!--<input required type="password" name="passwordYz" id="passwordYz" ng-model="userPassword" placeholder="输入新密码">-->
+                                            <!--<input required type="password" name="repeatPassword" id="repeatPassword" ng-model="repeatPassword" placeholder="确认新密码" class="inputTs">-->
+                                        <!--</form>-->
+                                        <!--&lt;!&ndash;<div ng-show="repeatPasswordForm.passwordYz.$dirty && repeatPasswordForm.passwordYz.$error.required" class="login-desktop-error2 accerr" data-ng-class="{accerr: true, error: error}">{{error6}}</div>&ndash;&gt;-->
+                                        <!--<div ng-show="userPassword!=repeatPassword && repeatPasswordForm.passwordYz.$dirty && repeatPasswordForm.repeatPassword.$dirty" class="login-desktop-error2 accerr" data-ng-class="{accerr: true, error: error}">{{error5}}</div>-->
+                                        <!--<input type="submit" class="acc-btn4" data-ng-click="fn4()" value="下一步">-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="acc-inner-yinying"></div>-->
+            <!--</div>-->
+
+
+            <!--<div class="acc-inner" ng-hide="myhide5">-->
+                <!--<div class="acc-inner">-->
+                    <!--<div class="acc-inner-h" id="account-header6">-->
+                        <!--<div class="acc-header ng-scope">-->
+                            <!--<div class="acc-h-logo1">重置密码成功</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="acc-inner-b" id="account-body6">-->
+                        <!--<div class="acc-body ng-scope" xmlns="http://www.w3.org/1999/html">-->
+                            <!--<div class="acc-content login-body-content">-->
+                                <!--<div class="acc-con-box">-->
+                                    <!--<div name="loginForm" class="ng-pristine ng-valid">-->
+                                        <!--<div class="resetSuccess"></div>-->
+                                        <!--<input type="submit" class="acc-btn3" data-ng-click="fn5()" value="立即登录">-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="acc-inner-yinying"></div>-->
+            <!--</div>-->
+
+
+        </div>
+    </div>
+    <div class="desktop-footer">
+        <div class="imgFoot"></div>
+        <strong>安全小提示</strong>
+        <p>如果您未获授权使用这私人电脑系统，请立刻离开。在未发通知或未获允许情况下，所有系统行为受监控及记录。</p>
+        <p>If you are not authorized to access this private computer system,please disconnect now.</p>
+        <p>All activities in this system will be monitored and recorded without prior notification or permission.</p>
+    </div>
+</div>
+
+<script>
+    function  onPcClear() {
+        $("#username").val("");
+        $("#password").val("");
+    }
+</script>

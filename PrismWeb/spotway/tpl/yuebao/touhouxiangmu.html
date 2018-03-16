@@ -1,0 +1,212 @@
+<div data-ng-controller="yuebao_touhouxiangmu" class="yuebao">
+
+
+    <div class="headeryuebao">
+        <div class="headerContent">
+            <!--第一部分-->
+            <div style="font-size: 20px;font-weight: bold;margin-top: 30px;padding-bottom: 10px">
+                投后项目管理看板
+            </div>
+            <div style="float: right;margin-top: -30px">
+                <select name="" id="">
+                    <option value="123">金地苏州何山路项目</option>
+                    <option value="123">123</option>
+                    <option value="123">123</option>
+                </select>
+            </div>
+            <div style="width: 100%;height: 300px;background-color: white">
+
+            </div>
+            <!--第二部分-->
+            <div  style="margin-top: 15px;width: 100%">
+                <div style="font-size: 16px;font-weight: bold;padding: 5px;">
+                    总指标
+                </div>
+                <div style="width: 49.5%;float: left;">
+                    <table st-table="rowCollectionBasic" class="table table-bordered table-striped">
+                        <thead>
+                        <tr>
+                            <th class="leftduiqi">指标名称</th>
+                            <th>指标值</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="row in rowCollectionBasic">
+                            <td>{{row.firstName | uppercase}}</td>
+                            <td>{{row.lastName}}</td>
+                        </tr>
+                        <tr>
+                            <td>123</td>
+                            <td>123</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div style="width: 49.5%;float: left;margin-left: 1%">
+                    <table st-table="rowCollectionBasic" class="table table-bordered table-striped">
+                        <thead>
+                        <tr>
+                            <th>业态名称</th>
+                            <th>计容建筑面积（m<sup>2</sup>）</th>
+                            <th>不计容建筑面积（m<sup>2</sup>）</th>
+                        </tr>
+                        </thead>
+                        <tr>
+                            <td>123</td>
+                            <td>123</td>
+                            <td>123</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!--第三部分-->
+            <div  style="margin-top: 15px">
+                <div style="font-size: 16px;font-weight: bold;padding: 5px;">
+                    项目分业态汇总信息
+                </div>
+                <table st-table="rowCollectionBasic" class="table table-bordered table-striped">
+                    <thead>
+                    <tr>
+                        <th>业态名称</th>
+                        <th>销售均价(元/m<sup>2</sup>)(元/个)</th>
+                        <th>投决计划均价(元/m<sup>2</sup>)(元/个)</th>
+                        <th>目前价格预期(元/m<sup>2</sup>)</th>
+                        <th>总可售面积个数(m<sup>2</sup>/个)</th>
+                        <th>总可售面积的业态占比</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="row in rowCollectionBasic">
+                        <td>{{row.firstName | uppercase}}</td>
+                        <td>{{row.lastName}}</td>
+                        <td>{{row.birthDate | date}}</td>
+                        <td>{{row.balance | currency}}</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>123</td>
+                        <td>123</td>
+                        <td>123</td>
+                        <td>123</td>
+                        <td>123</td>
+                        <td>123</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!--第四部分-->
+            <div  style="margin-top: 15px">
+                <div style="font-size: 16px;font-weight: bold;padding: 5px;">
+                    工程看板
+                </div>
+                <table st-table="rowCollectionBasic" class="table table-bordered table-striped">
+                    <thead>
+                    <tr>
+                        <th>分期</th>
+                        <th>分批次</th>
+                        <th>总建筑面积</th>
+                        <th>主体结构形象进度</th>
+                        <th>外立面进度形象</th>
+                        <th>精装修形象进度</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="row in rowCollectionBasic">
+                        <td>{{row.firstName | uppercase}}</td>
+                        <td>{{row.lastName}}</td>
+                        <td>{{row.birthDate | date}}</td>
+                        <td>{{row.balance | currency}}</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>123</td>
+                        <td>123</td>
+                        <td>123</td>
+                        <td>123</td>
+                        <td>123</td>
+                        <td>123</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!--第五部分-->
+            <div  style="margin-top: 15px">
+                <div style="font-size: 16px;font-weight: bold;padding: 5px;">
+                    销售看板
+                </div>
+                <div style="font-size: 14px;font-weight: bold;padding: 5px;">
+                    分业态销售情况
+                </div>
+
+                <table st-table="rowCollectionBasic" class="table table-bordered table-striped">
+                    <thead>
+                    <tr>
+                        <th>业态名称</th>
+                        <th>总可售面积(m<sup>2</sup>)</th>
+                        <th>已取证面积(m<sup>2</sup>)</th>
+                        <th>已售面积(m<sup>2</sup>)</th>
+                        <th>均价(元/m<sup>2</sup>)</th>
+                        <th>可售去化率</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="row in rowCollectionBasic">
+                        <td>{{row.firstName | uppercase}}</td>
+                        <td>{{row.lastName}}</td>
+                        <td>{{row.birthDate | date}}</td>
+                        <td>{{row.balance | currency}}</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>123</td>
+                        <td>123</td>
+                        <td>123</td>
+                        <td>123</td>
+                        <td>123</td>
+                        <td>123</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div style="font-size: 14px;font-weight: bold;padding: 5px;">
+                    分楼栋销售情况
+                </div>
+
+                <table st-table="rowCollectionBasic" class="table table-bordered table-striped">
+                    <thead>
+                    <tr>
+                        <th>楼栋号</th>
+                        <th>业态名称</th>
+                        <th>总可售面积(m<sup>2</sup>)</th>
+                        <th>已取证面积(m<sup>2</sup>)</th>
+                        <th>已售面积(m<sup>2</sup>)</th>
+                        <th>均价(元/m<sup>2</sup>)</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="row in rowCollectionBasic">
+                        <td>{{row.firstName | uppercase}}</td>
+                        <td>{{row.lastName}}</td>
+                        <td>{{row.birthDate | date}}</td>
+                        <td>{{row.balance | currency}}</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>123</td>
+                        <td>123</td>
+                        <td>123</td>
+                        <td>123</td>
+                        <td>123</td>
+                        <td>123</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,235 @@
+﻿.Finance{
+	width: 100%;
+	min-width: 955px;
+	position:relative
+}
+/*头部*/
+.Finance header{
+	width: 95%;
+	height: 153px;
+	margin: 40px 0 0 2.5%;
+	background: white;
+	position: relative;
+	padding: 12px 0;
+	border-radius: 5px;
+}
+.Finance header .top_kpi{
+	position: absolute;
+	display: inline-block;
+	width: 112px;
+	height: 30px;
+	top: -30px;
+	left: 20px;
+	background: white ;
+	text-align: center;
+	line-height: 30px;
+	border-top-left-radius:10px;
+	border-top-right-radius:10px;
+	border: 1px solid gainsboro;
+	border-bottom: none;
+	color: #FF4700;
+	font-size: 16px;
+	cursor: pointer;
+}
+.Finance header .top_kpi:nth-child(3){
+	left:137px;
+	background: #D2D2D2;
+	color: white;
+}
+.Finance .top_zhibiao{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content:space-around
+}
+/*三块样式*/
+.Finance .top_zhibiao>div{
+	width: 30%;
+	height: 100%;
+	border-radius: 10px;
+	float: left;
+	border: 2px solid gainsboro;
+	position: relative;
+	padding-left: 1%;
+}
+/*左方四样式*/
+.Finance .top_zhibiao>div:nth-child(1)>p:nth-child(1){
+	color: black;
+	width: 100%;
+	font-size: 17px;
+	margin-top: 16px;
+}
+@media(max-width:1300px){
+	.Finance .top_zhibiao>div:nth-child(1)>p:nth-child(1){
+		font-size: 16px;
+	}
+}
+@media(max-width:1232px){
+	.Finance .top_zhibiao>div:nth-child(1)>p:nth-child(1){
+		font-size: 15px;
+	}
+}
+.Finance .top_zhibiao>div:nth-child(1)>p:nth-child(2){
+	width: 100%;
+	margin-top: 15px;
+	font-size: 24px;
+	color: #EB5405;
+	font-weight: 600;
+}
+@media(max-width:1300px){
+	.Finance .top_zhibiao>div:nth-child(1)>p:nth-child(2){
+		font-size: 20px;
+	}
+}
+@media(max-width:1232px){
+	.Finance .top_zhibiao>div:nth-child(1)>p:nth-child(2){
+		font-size: 19px;
+	}
+}
+.Finance .top_zhibiao>div:nth-child(1)>p:nth-child(3){
+	color: black;
+	width: 100%;
+	font-size: 13px;
+	margin-top: 9px;
+}
+@media(max-width:1300px){
+	.Finance .top_zhibiao>div:nth-child(1)>p:nth-child(3){
+		font-size: 12px;
+	}
+}
+@media(max-width:1232px){
+	.Finance .top_zhibiao>div:nth-child(1)>p:nth-child(3){
+		font-size: 11px;
+	}
+}
+.Finance .top_zhibiao>div:nth-child(1)>div:nth-child(4){
+	position: absolute;
+	width: 100px;
+	height: 150px;
+	bottom: 25px;
+	right: 18px;
+}
+/*边框点击*/
+/*.Finance .active{*/
+	/*border: 3px solid red !important;*/
+/*}*/
+.Finance .top_zhibiao>div:nth-child(2){
+	padding: 18px 16px;
+}
+.Finance .top_zhibiao>div:nth-child(3){
+	padding: 18px 16px;
+}
+.Finance .top_zhibiao_left{
+	width: 60%;
+	height: 100%;
+	font-size: 14px;
+}
+@media(max-width:1305px){
+	.Finance .top_zhibiao_left{
+		font-size: 13px;
+	}
+}
+@media(max-width:1232px){
+	.Finance .top_zhibiao_left{
+		font-size: 12px;
+	}
+}
+.Finance .top_zhibiao_left>div{
+	line-height: 26px;
+}
+.Finance .top_zhibiao_left>div>div{
+	display: inline-block;
+}
+.Finance .top_zhibiao_yuan{
+	float: left;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	line-height: 26px;
+	margin-top: 8px;
+}
+.Finance .top_zhibiao_value{
+	width: 89%;
+	margin-left: 5%;
+}
+@media(max-width:1305px){
+	.Finance .top_zhibiao_value{
+		width: 88%;
+	}
+}
+@media(max-width:1232px){
+	.Finance .top_zhibiao_value{
+		width: 87%;
+	}
+}
+.Finance .top_zhibiao_value>span:nth-child(1){
+	float: left;
+}
+.Finance .top_zhibiao_value>span:nth-child(2){
+	float: right;
+}
+.Finance .top_zhibiao_right{
+	position: absolute;
+	width: 39.9%;
+	height: 100%;
+	right: 0;
+	top: 0;
+}
+/*底部*/
+.Finance footer{
+	margin: 16px 0 0 2.5%;
+	width: 95%;
+	background: white;
+	border-radius: 5px;
+	padding: 15px;
+	min-width: 1100px;
+}
+.Finance footer .footer_left,footer .footer_right{
+	display: inline-block;
+	width: 47.5%;
+}
+.Finance footer .footer_right{
+	margin-left: 4.6%;
+}
+.Finance .footer_left_top,.Finance .footer_right_top{
+	padding: 0px 22px;
+	 background: #0a9ccc;
+	color: white;
+	height: 36px;
+	line-height: 36px;
+	border-radius: 5px;
+	font-size: 16px;
+	box-shadow: 2px 2px #0a9ccc;
+}
+.Finance .footer_right_bottom,.footer_left_bottom{
+	border: 1px solid gainsboro;
+	margin-top: 20px;
+	display: inline-block;
+	height: 400px;
+	width:100%;
+	overflow: auto;
+}
+.Finance .footer_right_bottom table{
+	width: 100%;
+	/*height: 100%;*/
+}
+.Finance .footer_right_bottom table tr{
+	line-height: 40px;
+}
+.Finance .footer_right_bottom table tr:nth-child(2n-2){
+	background: #EDEDEB;
+}
+.Finance .footer_right_bottom table tr:nth-child(1){
+	background: #E0E0DA;
+}
+.Finance .footer_right_bottom table td{
+	width: 32%;
+	text-align: center;
+}
+.footerTbody tr{
+	height: 40px;
+}
+#pivot_ tbody tr>td:nth-child(1){
+	text-align: left;
+	padding-left: 10px;
+}

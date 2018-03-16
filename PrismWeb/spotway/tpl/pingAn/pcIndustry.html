@@ -1,0 +1,87 @@
+<div class="Industry" ng-controller="pingAnIndustryController">
+	<a style="float: right;padding-right: 50px;font-weight: bolder;color: #0db1cc" id="touzi" data-ng-click="fanhuijiuban();">返回旧版</a>
+
+	<header>
+		<div>
+			<p>过投决项目数(个）</p>
+			<p>{{xiangmushu}}</p>
+			<!--<p>完成率：120%</p>-->
+			<div class="top_zhibiao_tu" style="width: 35%;height: 80px;position: absolute;right: 0px;
+    top: 19px;
+    background: url(img/tb2/shuliang.png) no-repeat;
+     background-size: 82% 88%;
+    opacity: .8"></div>
+		</div>
+		<div>
+			<p>过投决投资面积(万方）</p>
+			<p>{{mianji}}</p>
+			<!--<p>完成率：120%</p>-->
+			<div class="top_zhibiao_tu" style="width: 35%;height: 80px;position: absolute;right: 0px;
+    top: 19px;
+    background: url(img/tb2/mianji.png) no-repeat;
+     background-size: 82% 88%;
+    opacity: .8"></div>
+		</div>
+		<div>
+			<p>新增锁定投资面积(万方）</p>
+			<p>{{mianji1}}</p>
+			<!--<p>完成率：120%</p>-->
+			<!--<div class="top_zhibiao_tu" style="width: 35%;height: 80px"></div>-->
+			<div class="top_zhibiao_tu" style="width: 35%;height: 80px;position: absolute;right: -8px;
+    top: 21px;
+    background: url(img/tb2/mianji1.png) no-repeat;
+     background-size: 82% 88%;
+    opacity: .8"></div>
+		</div>
+		<div>
+			<p>新增锁定投资规模(亿元）</p>
+			<p>{{guimo}}</p>
+			<!--<p>完成率：120%</p>-->
+			<!--<div class="top_zhibiao_tu" style="width: 35%;height: 80px"></div>-->
+			<div class="backgroundimg" style="width:35%;height:80px;position:absolute;right:-6px;top:20px;background:url(img/tb2/huikuan1.png) no-repeat;background-size:80% 88%;opacity:.8"></div>
+		</div>
+		<div>
+			<p>当前实投金额(亿元）</p>
+			<p>{{jine}}</p>
+			<!--<p>完成率：120%</p>-->
+			<!--<div class="top_zhibiao_tu" style="width: 35%;height: 80px"></div>-->
+			<div class="backgroundimg" style="width:35%;height:80px;position:absolute;right:-6px;top:20px;background:url(img/tb2/shouyi.png) no-repeat;background-size:80% 88%;opacity:.8"></div>
+		</div>
+	</header>
+	<footer>
+		<div class="footer_left">
+			<div class="footer_left_title">工程物业资产概览</div>
+			<table border="0" cellspacing="0" cellpadding="0" class="footer_left_table">
+				<!--<tr><td>工程及物业资产概览</td><td>本月新增(7月)</td><td>2017年新增</td><td>2016年</td><td>2015年</td><td>2014年</td><td>累计</td></tr>
+				<tr ><td>已运营项目数</td><td>0</td><td>2</td><td>14</td><td>2</td><td></td><td>18</td></tr>
+				<tr><td>已运营项目总可租</td><td>0</td><td>17</td><td>141.65</td><td>1.3</td><td></td><td>169.95</td></tr>-->
+			</table>
+		</div>
+		<div class="footer_right">
+			<div class="footer_right_title">工程物业资产概览</div>
+			<table border="0" cellspacing="0" cellpadding="0" class="footer_right_table">
+				<!--<tr><td>工程及物业资产概览</td><td>累计</td></tr>
+				<tr ><td>2017年上半年新增可租凭面积</td><td>16.8</td></tr>
+				<tr ><td>2017年上半年新增可租凭面积</td><td>16.8</td></tr>
+				<tr ><td>2017年上半年新增可租凭面积</td><td>16.8</td></tr>
+				<tr ><td>2017年上半年新增可租凭面积</td><td>16.8</td></tr>
+				<tr ><td>2017年上半年新增可租凭面积</td><td>16.8</td></tr>
+				<tr ><td>2017年上半年新增可租凭面积</td><td>16.8</td></tr>
+				<tr ><td>2017年上半年新增可租凭面积</td><td>16.8</td></tr>
+				<tr ><td>2017年上半年新增可租凭面积</td><td>16.8</td></tr>
+				<tr ><td>2017年上半年新增可租凭面积</td><td>16.8</td></tr>
+				<tr ><td>2017年上半年新增可租凭面积</td><td>16.8</td></tr>
+				<tr ><td>2017年上半年新增可租凭面积</td><td>16.8</td></tr>
+				<tr ><td>2017年上半年新增可租凭面积</td><td>16.8</td></tr>-->
+			</table>
+		</div>
+		<div class="footer_nav">
+			<div ng-click="touzix()">投资概览</div>
+			<div ng-click="gongchengx()">工程及物业资产概览</div>
+			<div ng-click="zhaoshangx()">招商概览</div>
+			<div ng-click="hezuox()">合作方跟投欠缴概览</div>
+			<div ng-click="yichangx()">异常未开工及延期项目概览</div>
+			<div ng-click="yunyingx()">运营项目NOI概览及租金欠缴率</div>
+		</div>
+	</footer>
+</div>

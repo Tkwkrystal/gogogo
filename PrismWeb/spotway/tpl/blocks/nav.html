@@ -1,0 +1,52 @@
+<!--最终的代码-->
+<script type="text/ng-template" id="nodes_renderer.html">
+  <div style="position: relative" data-ng-style="{paddingLeft: 20*node.levelIndex + 'px'}" ui-tree-handle class="tree-node tree-node-content auto treeBox">
+    <!--<a class="pull-left" data-nodrag style="margin: 0 8px 0 16px;" data-ng-click="ulShow($event)">-->
+    <a class="pull-left hoverA" data-nodrag style="margin: 0 8px 0 16px;">
+      <img  class="imgcss" src="{{node.src || 'img/pingAnImg/meun.png'}}" data-ng-click="showUrl(node)" title="{{node.title}}">
+        <!--<i class="glyphicon" ng-class="{'glyphicon-th': node.nodes.length == 0,'glyphicon-folder-open': node.nodes.length > 0}"></i>-->
+      <!--<div style="height: 10px;position: relative;top: 1px;display: inline-block;background-image: url("img/pinganImg/clhw.png")"></div>-->
+
+    </a>
+    <a class="titleName" data-ng-click="showUrl(node)" data-nodrag data-ng-hide="showMassages">{{node.title}}</a>
+   <!-- <a class="pull-right btn-xs" data-nodrag ng-click="remove(this)" data-ng-hide="showMassages">
+      <span class="glyphicon glyphicon-remove"></span>
+      &lt;!&ndash;<span class="glyphicon glyphicon-align-justify"></span>&ndash;&gt;
+    </a>-->
+    <a class="pull-right  btn-xs" data-nodrag data-ng-hide="showMassages" ng-show="node.levelIndex>1||node.nav_type!=0?'false':'true'" ng-click="showUlModle()"  ng-show="user.roleName=='super'">
+      <span class="glyphicon glyphicon-align-justify" ng-show="user.roleName=='super'"></span>
+
+    </a>
+    <!--<a class="pull-right btn-xs" data-nodrag ng-click="newSubItem(this)" style="margin-right: 8px;" ng-show="node.levelIndex>1||node.nav_type!=0?'false':'true'">
+      <span class="glyphicon glyphicon-plus" data-ng-hide="showMassages"></span>
+    </a>-->
+    <a style="margin-right: 8px;" class="btn-xs pull-right" ng-if="node.nodes && node.nodes.length > 0" data-nodrag ng-click="toggle(this)" data-ng-hide="showMassages">
+      <span class="glyphicon" ng-class="{'glyphicon-chevron-right': collapsed,'glyphicon-chevron-down': !collapsed}"></span>
+    </a>
+
+    <ul class="treeUl">
+      <li data-nodrag ng-show="node.nav_type==0" ng-click="newSubItem(this,'newItem')">新增</li>
+      <li data-nodrag ng-click="removeItem(this)" >删除</li>
+      <li data-nodrag ng-click="newSubItem(this)">分配页面</li>
+    </ul>
+
+  </div>
+  <ol class="olSecond" ui-tree-nodes="" ng-model="node.nodes" ng-class="{show:collapsed}" data-ng-hide="!showMassages">
+    <!--<ol class="olSecond" ui-tree-nodes="" ng-model="node.nodes" ng-class="{show: collapsed}" data-ng-hide="!showMassages">-->
+
+    <li ng-repeat="node in node.nodes" ui-tree-node ng-include="'nodes_renderer.html'"></li>
+  </ol>
+</script>
+
+<div class="nav"  data-ng-controller="navController" ng-show="navChangeShow ">
+    <div ui-tree id="tree-root" data-ng-show="data.length>0">
+      <ol ui-tree-nodes ng-model="data" class="olFirst">
+        <li ng-repeat="node in data" ui-tree-node ng-include="'nodes_renderer.html'"></li>
+      </ol>
+    </div>
+  <div  ng-show="user.roleName=='super'">
+    <a class="pull-left btn-xs"  ng-show="user.roleName=='super'" data-ng-hide="showMassages" data-ng-click="newSubItem('','newItem')"  style="margin-left: 83px;margin-top: 16px;font-size: 14pt;    border: 1px solid red;" >
+      <span class="glyphicon glyphicon-plus"  ng-show="user.roleName=='super'"></span>
+    </a>
+  </div>
+</div>

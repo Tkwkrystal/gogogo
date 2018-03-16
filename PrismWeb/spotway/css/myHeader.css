@@ -1,0 +1,140 @@
+
+.collapse .nav {
+    /*width: 50px;*/
+    width: 100px;
+    height: 43px;
+    margin: 4px -6px 0 12px;
+}
+
+.collapse .nav a.btn {
+    display: inline-block;
+    width: 32px;
+    height: 43px;
+    padding-left: 0;
+    text-align: center;
+}
+
+a {
+    color: #fff;
+}
+
+/*headerUl*/
+.collapse ul.navbar-nav {
+    height: 43px;
+    /*width: 67%;*/
+    width: 20%;
+    margin-top: 7px;
+}
+
+.collapse ul li {
+    float: left;
+    position: relative;
+    width: 92px;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    background-color: #5170B3;
+    margin-right: 3px;
+    margin-top: 7px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+.collapse ul li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    line-height: 0;
+    font-size: 9pt;
+    color: rgba(0, 0, 0, 0.5);
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+.collapse ul li span {
+    position: absolute;
+    top: -1px;
+    right: 0;
+    font-size: 10pt;
+    width: 10px;
+    height: 10px;
+    line-height: 10px;
+    /*color: rgba(225,225,225,1);*/
+    color: black;
+    z-index: 6;
+    cursor: pointer;
+}
+
+/*headerRight*/
+.collapse .navbar-right {
+    width: 102px;
+    height: 43px;
+    margin: 4px 0 0;
+    float: right;
+    /*border: 1px solid red;*/
+}
+
+.collapse .navbar-right a i:before {
+    content: "\f05b";
+}
+
+/*首页退出按钮*/
+.exit-icon {
+    margin-top: 13px;
+    display: inline-block;
+    position: relative;
+    width: 23px;
+    height: 24px;
+    background: url(../img/index/exit.png) no-repeat 0 0;
+    background-size: 24px 24px;
+}
+
+.exit-icon:hover{
+    background: url(../img/index/exitb.png) no-repeat 0 0;
+    background-size: 24px 24px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

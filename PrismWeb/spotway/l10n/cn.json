@@ -1,0 +1,46 @@
+{
+  "loginPage":{
+    "accountLogin":"账户登录",
+    "placeholderAccount":"用户名/邮箱地址",
+    "placeholderPWD":"密码",
+    "login":"登录",
+    "forgetPWD":"忘记密码",
+    "version_study":"演示版仅供学习使用",
+    "company":"版权所有:威海思博威软件股份有限公司© 20012-2017  沪ICP备14041450号-2"
+  },
+  "funAuth":{
+    "new_features":"新增功能",
+    "edit_features":"编辑功能",
+    "delete_features":"删除功能",
+    "disabled_features":"禁用",
+    "num":"序号",
+    "code":"编码",
+    "name":"名称",
+    "fun_type":"类型",
+    "address":"对应URL",
+    "founder":"创建人",
+    "create_time":"创建时间"
+  },
+  "userPage":{
+    "new_user":"新增用户",
+    "added_to_group":"添加到组",
+    "edit_user":"编辑用户",
+    "delete_user":"删除用户",
+    "disable_user":"禁用",
+    "account":"用户名",
+    "email":"电子邮箱",
+    "userName":"姓名",
+    "userGroup":"用户组",
+    "role":"角色",
+    "active":"起源"
+  },
+  "gourpPage":{
+    "new_group":"新增组",
+    "edit_group":"编辑组",
+    "delete_group":"删除组",
+    "disable_group":"禁用",
+    "groupName":"组名称",
+    "userNum":"用户数量",
+    "active":"起源"
+  }
+}  

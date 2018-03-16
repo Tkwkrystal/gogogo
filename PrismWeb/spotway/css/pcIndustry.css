@@ -1,0 +1,141 @@
+.Industry{
+	width: 100%;
+	min-width: 1006px;
+}
+/*头部*/
+.Industry header{
+	background: white;
+	width: 95%;
+	margin: 20px 0 0 2.5%;
+	border-radius: 5px;
+	padding: 10px 17px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	align-items:center;
+	height: 260px;
+}
+.Industry header>div{
+	width: 24.2%;
+	height: 108px;
+	border: 2px solid gainsboro;
+	padding: 7px 8px;
+	border-radius: 10px;
+	position: relative;
+}
+.Industry header>div>p:nth-child(1){
+	color: black;
+	width: 100%;
+	font-size: 16px;
+	font-weight: 500;
+}
+.Industry header>div>p:nth-child(2){
+
+	width: 100%;
+	font-size: 24px;
+	color: #EB5405;
+	font-weight: 600;
+	height: 40px;
+	line-height: 40px;
+	margin: 5px 0 3px 0;
+}
+.Industry .top_zhibiao_tu{
+	position: absolute;
+	width: 100px;
+    height: 140px;
+    bottom: 12px;
+    right: 16px;
+}
+/*底部*/
+.Industry footer{
+	width: 95%;
+	min-width: 1100px;
+	margin: 46px 0 0 2.5%;
+	padding: 20px;
+	border-radius: 5px;
+	background: white;
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+}
+.Industry footer .footer_nav{
+	position: absolute;
+	left: 20px;
+	top: -30px;
+	display: flex;
+	flex-direction: row;
+}
+.Industry footer .footer_nav>div{
+	background: #D2D2D2;
+	color: white;
+	padding: 0 17px;	
+	margin-right: 5px;
+	height: 30px;
+	line-height: 30px;
+	font-size: 16px;
+	border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    cursor: pointer;
+}
+.Industry footer .footer_nav .active{
+	background: white;
+	color: #FF4700;
+}
+.Industry footer .footer_left{
+	width: 60%;
+	padding-right: 22px;
+}
+.Industry footer .footer_right{
+	width: 40%;
+}
+.Industry .footer_right_table,.Industry .footer_right_table tbody{
+	width: 100%;
+}
+.Industry footer .footer_left table,.Industry footer .footer_right table{
+	width: 100%;
+	flex-wrap: nowrap;
+	border: 1px solid gainsboro;
+}
+.Industry footer .footer_left tr,.Industry footer .footer_right tr{
+	line-height: 30px;
+}
+.Industry footer .footer_left tr:nth-child(2n-1),.Industry footer .footer_right tr:nth-child(2n-1){
+	background: #EDEDEB;
+}
+.Industry footer .footer_left td{
+	padding: 0 8px;
+	text-align: left;
+}
+.Industry footer .footer_right td:nth-child(1){
+	width: 59%;
+	text-align: center;
+}
+.Industry footer .footer_right td:nth-child(2){
+	width: 39%;
+	text-align: center;
+}
+.Industry .footer_left_title,.Industry .footer_right_title{
+	color: white;
+    padding: 0px 22px;
+    margin-bottom: 20px;
+    height: 36px;
+    line-height: 36px;
+    background: #0a9ccc;
+    border-radius: 5px;
+    font-size: 16px;
+	-webkit-box-shadow: 2px 2px #0a9ccc;
+	-moz-box-shadow: 2px 2px #0a9ccc;
+	box-shadow: 2px 2px #0a9ccc;
+}
+#pivot__ACCRowArea{
+	font-weight: bold;
+	color: black;
+}
+table tr td{
+	/*text-align: center;*/
+}
+table tbody tr>td:nth-child(1){
+	text-align: left;
+	padding-left: 10px;
+}

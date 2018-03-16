@@ -1,0 +1,471 @@
+all:
+  x-swagger-router-controller: users.controller.v1
+  get:
+    x-permission-type: general
+    x-permission-path: manage/users/get
+    operationId: getUsers
+    summary: Get users
+    description: |
+      The **get users** endpoint returns a list of users with their details.
+      <br/>Results can be filtered by parameters such as username and email.
+      <br/><br/>The expandable fields for the user object are `groups`, `adgroups` and `role`.
+    tags:
+          - users
+    responses:
+      200:
+        description: An array of users
+        schema:
+          type: array
+          items:
+            $ref: '#/definitions/user'
+      404:
+        description: Invalid expand parameter.
+        schema:
+           $ref: '#/definitions/notFoundApiError'
+    parameters:
+      - $ref: '#/parameters/authorization'
+      - in: query
+        description: Username to filter by
+        name: userName
+        required: false
+        type : string
+      - in: query
+        description: Email to filter by
+        name: email
+        required: false
+        type : string
+        pattern: ^(?:\s*(?:\(\s*((?:[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-\s]*)[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+)\s*\))?\s*([a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*)\s*|)$
+      - in: query
+        description: First name to filter by
+        name: firstName
+        required: false
+        type : string
+      - in: query
+        description: Last name to filter by
+        name: lastName
+        required: false
+        type : string
+      - in: query
+        description: Role ID to filter by
+        name: roleId
+        required: false
+        type : string
+        pattern: ^[0-9a-fA-F]{24}$
+      - in: query
+        description: Group ID to filter by
+        name: groupId
+        required: false
+        type : string
+        pattern: (^[0-9a-fA-F]{24}$|^[Nn][Uu][Ll]{2}$)
+      - in: query
+        description: User state to filter by - `true` for active users, `false` for inactive users
+        name: active
+        required: false
+        type : boolean
+      - in: query
+        description: User origin to filter by - `ad` for active directory or `sisense`
+        name: origin
+        required: false
+        type : string
+        enum:
+          - ad
+          - sisense
+      - in: query
+        description: Array of user IDs to get, separated by a comma (`,`) and without spaces
+        name: ids
+        required: false
+        type: array
+        collectionFormat: csv
+        items:
+          type: string
+      - $ref: '#/parameters/fields'
+      - $ref: '#/parameters/sort'
+      - $ref: '#/parameters/skip'
+      - $ref: '#/parameters/limit'
+      - $ref: '#/parameters/expand'
+  post:
+    x-permission-type: general
+    x-permission-path: manage/users/add
+    operationId: addUser
+    summary: Add a new user
+    description: |
+      The *add user* endpoint receives a new user object and creates that user in Sisense, returning the created object.
+      <br/>If a user with the same username or email exists, it will return an error.
+    tags:
+      - users
+    responses:
+      201:
+        description: No response was specified #???
+        schema:
+           $ref: '#/definitions/user'
+      404:
+        description: Role not found.
+      400:
+        description: |
+          - **2004** The user already exists.
+          - **2006** Multiple super-users are not allowed.
+          - **2007** Cannot add user because the license has been exceeded.
+          - **2009** Mandatory fields cannot be empty.
+        schema:
+          $ref: '#/definitions/badRequestApiError'
+      422:
+        description: |
+          - **601** Invalid object ID.
+          - **2003** Mandatory fields are missing.
+        schema:
+          $ref: '#/definitions/badRequestApiError'
+    parameters:
+      - $ref: '#/parameters/authorization'
+      - in: body
+        description: Basic user object (in `JSON` notation) to be added
+        name: user
+        required: true
+        schema:
+          $ref: '#/definitions/sisenseUser'
+one:
+  x-swagger-router-controller: users.controller.v1
+  get:
+    x-permission-type: general
+    x-permission-path: manage/users/get
+    operationId: getUser
+    summary: Get a specific user
+    description: The **get user by ID** endpoint retrieves a specific user object corresponding to the provided ID.<br/><br/>The expandable fields for the user object are `groups`, `adgroups` and `role`.
+    tags:
+      - users
+    responses:
+      200:
+        description: user
+        schema:
+          $ref: '#/definitions/user'
+      404:
+        description: |
+          - **202** Invalid expand parameter.
+          - **2001** User not found.
+        schema:
+          $ref: '#/definitions/notFoundApiError'
+    parameters:
+      - $ref: '#/parameters/authorization'
+      - in: path
+        description: The ID of the user to get
+        name: id
+        required: true
+        type : string
+        pattern: ^[0-9a-fA-F]{24}$
+      - $ref: '#/parameters/fields'
+      - $ref: '#/parameters/expand'
+  patch:
+    x-permission-type: general
+    x-permission-path: manage/users/modify
+    operationId: updateUser
+    summary: Update a user
+    description: |
+      The *update user* endpoint receives a user id and what fields to update, returning the updated object.
+      <br/>If a user with the specified id is not exists, it will return an error.
+    tags:
+      - users
+    responses:
+      200:
+        description: user
+        schema:
+          $ref: '#/definitions/user'
+      404:
+        description: |
+          - **2001** User not found.
+    parameters:
+      - $ref: '#/parameters/authorization'
+      - in: path
+        description: The ID of the user to update
+        name: id
+        required: true
+        type : string
+        pattern: ^[0-9a-fA-F]{24}$
+      - in: body
+        description: Partial user object (in `JSON` notation) containing the fields to update
+        name: user
+        required: true
+        schema:
+          $ref: '#/definitions/sisenseUser'
+  delete:
+    x-permission-type: general
+    x-permission-path: manage/users/remove
+    operationId: deleteUser
+    summary: Delete a user
+    description: |
+      The *delete user* endpoint receives a user id and deletes that user in Sisense, returning the deleted object.
+      <br/>If a user with the specified id is not exists, it will return an error.
+    tags:
+      - users
+    responses:
+      204:
+        description: No response was specified #???
+      400:
+        description: |
+          - **2011** A super-user cannot be deleted.
+      404:
+        description: |
+          - **2001** User not found.
+    parameters:
+      - $ref: '#/parameters/authorization'
+      - in: path
+        description: The ID of the user to delete
+        name: id
+        required: true
+        type : string
+        pattern: ^[0-9a-fA-F]{24}$
+bulk:
+  x-swagger-router-controller: users.controller.v1
+  post:
+    x-permission-type: general
+    x-permission-path: manage/users/add
+    operationId: addUsers
+    summary: Add several users at once
+    description: The **bulk add** endpoint allows adding multiple users at once, by receiving an array of user objects whose structure is alike to the single **add user** endpoint.
+    tags:
+      - users
+    responses:
+      201:
+        description: No response was specified
+        schema:
+          type: array
+          items:
+           $ref: '#/definitions/sisenseUser'
+      404:
+        description: Role not found.
+        schema:
+          $ref: '#/definitions/notFoundApiError'
+      400:
+        description: |
+          - **2002** Invalid Users format. Users must be passed as an array.
+          - **2004** One or more of the given users already exists.
+          - **2005** The given users contain duplicates.
+          - **2006** Multiple super-users are not allowed.
+          - **2007** Cannot add user because the license has been exceeded.
+          - **2009** Mandatory fields cannot be empty.
+        schema:
+          $ref: '#/definitions/badRequestApiError'
+      422:
+        description: |
+          - **601** Invalid object ID.
+          - **2003** Mandatory fields are missing.
+        schema:
+          $ref: '#/definitions/badRequestApiError'
+    parameters:
+      - $ref: '#/parameters/authorization'
+      - in: body
+        description: A collection of basic user objects (in `JSON` notation) to be added
+        name: users
+        required: true
+        schema:
+          type: array
+          items:
+            $ref: '#/definitions/sisenseUser'
+  delete:
+    x-permission-type: general
+    x-permission-path: manage/users/remove
+    operationId: deleteUsers
+    summary: Delete users
+    description: |
+      The *delete users* endpoint receives users' ids and deletes these users in Sisense.
+      <br/>If a user with the specified id is not exists, it will return an error.
+    tags:
+      - users
+    responses:
+      204:
+        description: No response was specified #???
+      400:
+        description: |
+          - **2011** A super-user cannot be deleted.
+      404:
+        description: |
+          - **2001** One or more users not found.
+    parameters:
+      - $ref: '#/parameters/authorization'
+      - in: query
+        description: Array of user IDs to get, separated by a comma (`,`) and without spaces
+        name: ids
+        required: false
+        type: array
+        collectionFormat: csv
+        items:
+          type: string
+allad:
+  x-swagger-router-controller: users.controller.v1
+  post:
+    x-permission-type: general
+    x-permission-path: manage/users/add
+    operationId: addAdUser
+    summary: Add a new Active Directory user
+    description: The **add Active Directory user** endpoint receives an Active Directory user object, retrieves the user's details from Active Directory and adds it to the application.
+    tags:
+          - users
+    responses:
+      201:
+        description: No response was specified
+        schema:
+           $ref: '#/definitions/user'
+      404:
+        description: Role not found.
+        schema:
+          $ref: '#/definitions/notFoundApiError'
+      400:
+        description: |
+          - **2004** The user already exists.
+          - **2006** Multiple super-users are not allowed.
+          - **2007** Cannot add user because the license has been exceeded.
+          - **2008** Cannot add a user that does not have a principal name in Active Directory.
+          - **2009** Mandatory fields cannot be empty.
+        schema:
+          $ref: '#/definitions/badRequestApiError'
+      422:
+        description: |
+          - **601** Invalid object ID.
+          - **2003** Mandatory fields are missing.
+        schema:
+          $ref: '#/definitions/badRequestApiError'
+    parameters:
+      - $ref: '#/parameters/authorization'
+      - in: body
+        description: Active Directory user object to be added
+        name: adUser
+        required: true
+        schema:
+          $ref: '#/definitions/adUser'
+bulkad:
+  x-swagger-router-controller: users.controller.v1
+  post:
+    x-permission-type: general
+    x-permission-path: manage/users/add
+    operationId: addAdUsers
+    summary: Bulk add Active Directory users
+    description: The **bulk add Active Directory user** endpoint receives an array of Active Directory user objects, retrieves the user's details from Active Directory and adds it to the application.
+    tags:
+          - users
+    responses:
+      201:
+        description: No response was specified
+        schema:
+          type: array
+          items:
+           $ref: '#/definitions/adUser'
+      404:
+        description: Role not found.
+        schema:
+          $ref: '#/definitions/notFoundApiError'
+      400:
+        description: |
+          - **2002** Invalid Users format. Users must be passed as an array.
+          - **2004** One or more of the given users already exists.
+          - **2005** The given users contain duplicates.
+          - **2006** Multiple super-users are not allowed.
+          - **2007** Cannot add users because the license has been exceeded.
+          - **2008** Cannot add a user that does not have a principal name in Active Directory.
+          - **2009** Mandatory fields cannot be empty.
+        schema:
+          $ref: '#/definitions/badRequestApiError'
+      422:
+        description: |
+          - **601** Invalid object ID.
+          - **2003** Mandatory fields are missing.
+        schema:
+          $ref: '#/definitions/badRequestApiError'
+    parameters:
+      - $ref: '#/parameters/authorization'
+      - in: body
+        description: Array of Active Directory user objects to be added
+        name: adUsers
+        required: true
+        schema:
+          type: array
+          items:
+            $ref: '#/definitions/adUser'
+registerDevice:
+  x-swagger-router-controller: users.controller.v1
+  post:
+    x-hide : true
+    x-permission-type : none
+    operationId: registerDevice
+    summary: Register a mobile device and token for a user
+    description: Register a mobile device and token for a user
+    tags:
+          - users
+    responses:
+      200:
+        description: user
+        schema:
+          $ref: '#/definitions/user'
+      404:
+        description: |
+          - **2001** User not found.
+    parameters:
+      - $ref: '#/parameters/authorization'
+      - in: path
+        description: The ID of the user to register the device for
+        name: id
+        required: true
+        type : string
+        pattern: ^[0-9a-fA-F]{24}$
+      - in: body
+        description: Device object (in `JSON` notation) containing the ids
+        name: device
+        required: true
+        schema:
+          $ref: '#/definitions/device'
+unregisterDevice:
+  x-swagger-router-controller: users.controller.v1
+  post:
+    x-hide : true
+    x-permission-type : none
+    operationId: unregisterDevice
+    summary: Unregister a mobile device from a user
+    description: Unregister a mobile device from a user
+    tags:
+          - users
+    responses:
+      200:
+        description: user
+        schema:
+          $ref: '#/definitions/user'
+      404:
+        description: |
+          - **2001** User not found.
+    parameters:
+      - $ref: '#/parameters/authorization'
+      - in: path
+        description: The ID of the user to unregister the device for
+        name: id
+        required: true
+        type : string
+        pattern: ^[0-9a-fA-F]{24}$
+      - in: body
+        description: Device object (in `JSON` notation) containing the ids
+        name: device
+        required: true
+        schema:
+          $ref: '#/definitions/device'
+userPreferences:
+  x-swagger-router-controller: users.controller.v1
+  patch:
+    x-hide : true
+    x-permission-type : none
+    operationId: updateUserPreferences
+    summary: Update user's preferences, for example, localeId or language
+    description: |
+      The **update user preferences** endpoint changes preferences (localeId, language, etc) for the current user.
+    tags:
+      - users
+    responses:
+      200:
+        description: user
+        schema:
+          $ref: '#/definitions/user'
+      404:
+        description: |
+          - **2001** User not found.
+    parameters:
+      - $ref: '#/parameters/authorization'
+      - in: body
+        description: Fields for update in the user preferences
+        name: newUserPreferences
+        required: true
+        schema:
+          $ref: '#/definitions/userPreferences'

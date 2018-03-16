@@ -1,0 +1,617 @@
+.pingAn{min-width: 800px;}
+
+/*bodyer部分！*/
+.bodyer{
+    /*min-width: 1024px;*/
+    width: 100%;
+    height: 40px;
+    margin: 40px 0 30px;
+}
+.bodyer .bodyerContent{
+    width: 98%;
+    height: 100%;
+    line-height: 40px;
+    margin: 0 auto;
+    font-family: "微软雅黑";
+    background-color: #E6E6E6;
+}
+.bodyer .bodyerContent span.bodyerSpanBj{
+    display: inline-block;
+    width: 34px;
+    height: 30px;
+    background: url("../img/pingAnImg/5.png") no-repeat center center;
+    background-size: 100% 100%;
+    margin: 5px 20px 0 35px;
+    float: left;
+}
+.bodyer .bodyerContent span.bodyerSpan{
+    display: inline-block;
+    margin-top: 5px;
+    color:#EB5405;
+}
+.causeUl1  li span {
+    font-size: 14px;
+}
+
+@media screen and (max-width:1264px){
+    /*header部分！*/
+    .header{
+        min-width: 800px;
+        width: 100%;
+        height: 90px;
+    }
+    .header .headerUl{
+        width: 100%;
+        height: 100%;
+    }
+    .header .headerUl li{
+        float: left;
+        width: 25%;
+        height: 100%;
+    }
+    .header .headerUl li .liContent{
+        width: 98%;
+        height: 100%;
+        margin: 0 auto;
+        cursor: pointer;
+    }
+    .header .headerUl li .liContent .contentTop{
+        width: 100%;
+        height: 70px;
+        border: 1px solid #EAEAEA;
+        margin: 30px 0 0;
+    }
+    .contentTopActive{
+        border: 3px solid #EB5405 !important;
+    }
+    .header .headerUl li .liContent .contentTop .topLeft{
+        width: 40px;
+        height: 100%;
+        float: left;
+    }
+    .header .headerUl li .liContent .contentTop .topLeft1{
+        background-color: #0792CB;
+    }
+    .header .headerUl li .liContent .contentTop .topLeft2{
+        background-color: #7DAE41;
+    }
+    .header .headerUl li .liContent .contentTop .topLeft3{
+        background-color: #EEA91D;
+    }
+    .header .headerUl li .liContent .contentTop .topLeft4{
+        background-color: #F14A51;
+    }
+    .header .headerUl li .liContent .contentTop .topLeft span{
+        display: block;
+        width: 20px;
+        height: 23px;
+        margin: 20px auto;
+    }
+    .header .headerUl li .liContent .contentTop .topLeft span.spanBj1{
+        background: url(../img/pingAnImg/1.png) no-repeat center center;
+        background-size: 100% 100%;
+    }
+    .header .headerUl li .liContent .contentTop .topLeft span.spanBj2{
+        background: url(../img/pingAnImg/2.png) no-repeat center center;
+        background-size: 100% 100%;
+    }
+    .header .headerUl li .liContent .contentTop .topLeft span.spanBj3{
+        background: url(../img/pingAnImg/3xms.png) no-repeat center center;
+        background-size: 100% 100%;
+    }
+    .header .headerUl li .liContent .contentTop .topLeft span.spanBj4{
+        background: url(../img/pingAnImg/4.png) no-repeat center center;
+        background-size: 100% 100%;
+    }
+    .header .headerUl li .liContent .contentTop .topRight{
+        float: right;
+        /*width: 128px;*/
+        text-align: right;
+        margin-right: 4px;
+    }
+    .header .headerUl li .liContent .contentTop .topRight p.pFont ,
+    .header .headerUl li .liContent .contentBottom .topRight p.pFont{
+        margin-top: 5px;
+        font-size: 16px;
+    }
+    .header .headerUl li .liContent .contentTop .topRight span.pNumber{
+        display: block;
+        /*margin-top: 5px;*/
+        font-size: 24px;
+        color: #EB5405;
+    }
+
+    .header .headerUl li .liContent .contentBottom{
+        width: 100%;
+        height: 64px;
+        border: 1px solid #EAEAEA;
+        margin: 30px 0 0px;
+    }
+    .header .headerUl li .liContent .contentBottom .topLeft{
+        width: 40px;
+        height: 100%;
+        float: left;
+    }
+    .header .headerUl li .liContent .contentBottom .topLeft1{
+        background-color: #0792CB;
+    }
+    .header .headerUl li .liContent .contentBottom .topLeft2{
+        background-color: #7DAE41;
+    }
+    .header .headerUl li .liContent .contentBottom .topLeft3{
+        background-color: #EEA91D;
+    }
+    .header .headerUl li .liContent .contentBottom .topLeft4{
+        background-color: #F14A51;
+    }
+    .header .headerUl li .liContent .contentBottom .topLeft span{
+        display: block;
+        width: 20px;
+        height: 23px;
+        margin: 20px auto;
+    }
+    .header .headerUl li .liContent .contentBottom .topLeft span.spanBj1{
+        background: url(../img/pingAnImg/1.png) no-repeat center center;
+        background-size: 100% 100%;
+    }
+    .header .headerUl li .liContent .contentBottom .topLeft span.spanBj2{
+        background: url(../img/pingAnImg/2.png) no-repeat center center;
+        background-size: 100% 100%;
+    }
+    .header .headerUl li .liContent .contentBottom .topLeft span.spanBj3{
+        background: url(../img/pingAnImg/3.png) no-repeat center center;
+        background-size: 100% 100%;
+    }
+    .header .headerUl li .liContent .contentBottom .topLeft span.spanBj4{
+        background: url(../img/pingAnImg/4.png) no-repeat center center;
+        background-size: 100% 100%;
+    }
+    .header .headerUl li .liContent .contentBottom .topRight{
+        float: right;
+        /*width: 128px;*/
+        text-align: right;
+        margin-right: 4px;
+    }
+    .header .headerUl li .liContent .contentBottom .topRight span.pNumber{
+        display: block;
+        margin-top: 5px;
+        font-size: 20px;
+        color: #EB5405;
+    }
+
+
+    /*footer部分！*/
+    .footer {
+        min-width: 800px;
+        width: 100%;
+        height: 450px;
+    }
+    .footerLeft{
+        width: 65%;
+        height: 90%;
+        float: left;
+    }
+
+    .footer .footerRight{
+        width: 35%;
+        float: right;
+    }
+    .footer .footerRight ul.causeUl1{
+        width: 90%;
+        height: auto;
+    }
+    .footer .footerRight ul.causeUl1 li{
+        height: 42px;
+        line-height: 42px;
+        width: 100%;
+        position: relative;
+        cursor:pointer;
+    }
+    .footer .footerRight ul.causeUl1 li ul.causeUl2{
+        position: absolute;
+        top:42px;
+        left:0;
+        width: 100%;
+        height: auto;
+        /*display: none;*/
+        z-index: 99999;
+        background-color: #EEF2F5;
+        color: black;
+    }
+    .footer .footerRight ul.causeUl1 li ul.causeUl2 span.spanUl1{
+        margin-left: 42px;
+        float: left;
+    }
+    .footer .footerRight ul.causeUl1 li ul.causeUl2 span.spanUl2{
+        margin-right: 80px;
+        float: right;
+    }
+
+    .footer .footerRight ul.causeUl1 li span.sp1{
+        float: left;
+        margin-left: 4px;
+        color: #2F87AF;
+    }
+    .footer .footerRight ul.causeUl1 li span.sp1small{
+        float: left;
+        margin-left: 4px;
+        color: #292929;
+        font-size: 12px;
+    }
+    .footer .footerRight ul.causeUl1 li .bottomBox{
+        display: inline-block;
+        float: right;
+        margin-right: 6px;
+        margin-top: 16px;
+        width: 21%;
+        height: 10px;
+        position: relative;
+        background-color: #D8DCDB;
+        /*background-color: transparent;*/
+        border-radius: 6px;
+    }
+    .footer .footerRight ul.causeUl1 li .topBoxTs{
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        border-radius: 6px;
+    }
+    .footer .footerRight ul.causeUl1 li .bottomBox .topBox{
+        background-color: #9DB986;
+        width:92%;
+    }
+    .footer .footerRight ul.causeUl1 li .bottomBox .topBox1{
+        background-color: #7DAAD4;
+        width:96%;
+    }
+    .footer .footerRight ul.causeUl1 li .bottomBox .topBox2{
+        background-color: #E5C980;
+        width:87%;
+    }
+    .footer .footerRight ul.causeUl1 li .bottomBox .topBox3{
+        background-color: #CC7F87;
+        width:59%;
+    }
+    .footer .footerRight ul.causeUl1 li .bottomBox .topBox4{
+        background-color: #7CA9D2;
+        width:77%;
+    }
+    .footer .footerRight ul.causeUl1 li .bottomBox .topBox5{
+        background-color: #EAC783;
+        width:64%;
+    }
+    .footer .footerRight ul.causeUl1 li .bottomBox .topBox6{
+        background-color: #CB7E86;
+        width:87%;
+    }
+    .footer .footerRight ul.causeUl1 li span.spanPercent{
+        margin-right: 6px;
+        color:#2F87AF;
+        float: right;
+        display: inline-block;
+        width: 32px;
+        text-align: center;
+    }
+    /*.footer .footerRight ul.causeUl1 li span.spanMark{
+        margin-right: 10px;
+        float: right;
+    }*/
+    .footer .footerRight ul.causeUl1 li a.details{
+        display: inline-block;
+        float: right;
+        margin-right: 4px;
+        margin-top: 10px;
+        background-color: #EE8617;
+        padding: 0 8px;
+        border-radius: 10px;
+        height: 20px;
+        line-height: 20px;
+    }
+
+    .footer .footerRight ul.causeUl1 li.firstLi{
+        background-color: #EEF2F5;
+        border-bottom: 2px solid #C7C8CA;
+    }
+    .footer .footerRight ul.causeUl1 li.firstLi span{
+        margin-left: 12px;
+        color:black;
+        font-size: 18px;
+    }
+
+}
+
+@media screen and (min-width: 1265px){
+    /*header部分！*/
+    .header{
+        width: 100%;
+        height: 90px;
+    }
+    .header .headerUl{
+        width: 100%;
+        height: 100%;
+    }
+    .header .headerUl li{
+        float: left;
+        width: 25%;
+        height: 100%;
+    }
+    .header .headerUl li .liContent{
+        width: 88%;
+        height: 100%;
+        margin: 0 auto;
+        cursor: pointer;
+    }
+    .header .headerUl li .liContent .contentTop{
+        width: 100%;
+        height: 64px;
+        border: 1px solid #EAEAEA;
+        margin: 30px 0 0;
+    }
+    .contentTopActive{
+        border: 3px solid #0792CB !important;
+        border-radius: 6px;
+    }
+    .contentTopActive1{
+        border: 3px solid #7DAE41 !important;
+        border-radius: 6px;
+    }
+    .contentTopActive2{
+        border: 3px solid #EEA91D !important;
+        border-radius: 6px;
+    }
+    .contentTopActive3{
+        border: 3px solid #EB5405 !important;
+        border-radius: 6px;
+    }
+    .header .headerUl li .liContent .contentTop .topLeft{
+        width: 50px;
+        height: 100%;
+        float: left;
+    }
+    .header .headerUl li .liContent .contentTop .topLeft1{
+        background-color: #0792CB;
+    }
+    .header .headerUl li .liContent .contentTop .topLeft2{
+        background-color: #7DAE41;
+    }
+    .header .headerUl li .liContent .contentTop .topLeft3{
+        background-color: #EEA91D;
+    }
+    .header .headerUl li .liContent .contentTop .topLeft4{
+        background-color: #F14A51;
+    }
+    .header .headerUl li .liContent .contentTop .topLeft span{
+        display: block;
+        width: 25px;
+        height: 28px;
+        margin: 17px auto;
+    }
+    .header .headerUl li .liContent .contentTop .topLeft span.spanBj1{
+        background: url(../img/pingAnImg/1.png) no-repeat center center;
+        background-size: 100% 100%;
+    }
+    .header .headerUl li .liContent .contentTop .topLeft span.spanBj2{
+        background: url(../img/pingAnImg/2.png) no-repeat center center;
+        background-size: 100% 100%;
+    }
+    .header .headerUl li .liContent .contentTop .topLeft span.spanBj3{
+        background: url(../img/pingAnImg/3xms.png) no-repeat center center;
+        background-size: 100% 100%;
+    }
+    .header .headerUl li .liContent .contentTop .topLeft span.spanBj4{
+        background: url(../img/pingAnImg/4.png) no-repeat center center;
+        background-size: 100% 100%;
+    }
+    .header .headerUl li .liContent .contentTop .topRight{
+        float: right;
+        /*width: 128px;*/
+        text-align: right;
+        margin-right: 4px;
+    }
+    .header .headerUl li .liContent .contentTop .topRight p.pFont ,
+    .header .headerUl li .liContent .contentBottom .topRight p.pFont{
+        margin-top: 5px;
+        font-size: 16px;
+    }
+    .header .headerUl li .liContent .contentTop .topRight span.pNumber{
+        display: block;
+        /*margin-top: 5px;*/
+        font-size: 24px;
+        color: #EB5405;
+    }
+
+    .header .headerUl li .liContent .contentBottom{
+        width: 100%;
+        height: 64px;
+        border: 1px solid #EAEAEA;
+        margin: 30px 0 0px;
+    }
+    .header .headerUl li .liContent .contentBottom .topLeft{
+        width: 50px;
+        height: 100%;
+        float: left;
+    }
+    .header .headerUl li .liContent .contentBottom .topLeft1{
+        background-color: #0792CB;
+    }
+    .header .headerUl li .liContent .contentBottom .topLeft2{
+        background-color: #7DAE41;
+    }
+    .header .headerUl li .liContent .contentBottom .topLeft3{
+        background-color: #EEA91D;
+    }
+    .header .headerUl li .liContent .contentBottom .topLeft4{
+        background-color: #F14A51;
+    }
+    .header .headerUl li .liContent .contentBottom .topLeft span{
+        display: block;
+        width: 25px;
+        height: 28px;
+        margin: 17px auto;
+    }
+    .header .headerUl li .liContent .contentBottom .topLeft span.spanBj1{
+        background: url(../img/pingAnImg/1.png) no-repeat center center;
+        background-size: 100% 100%;
+    }
+    .header .headerUl li .liContent .contentBottom .topLeft span.spanBj2{
+        background: url(../img/pingAnImg/2.png) no-repeat center center;
+        background-size: 100% 100%;
+    }
+    .header .headerUl li .liContent .contentBottom .topLeft span.spanBj3{
+        background: url(../img/pingAnImg/3.png) no-repeat center center;
+        background-size: 100% 100%;
+    }
+    .header .headerUl li .liContent .contentBottom .topLeft span.spanBj4{
+        background: url(../img/pingAnImg/4.png) no-repeat center center;
+        background-size: 100% 100%;
+    }
+    .header .headerUl li .liContent .contentBottom .topRight{
+        float: right;
+        width: 128px;
+        text-align: right;
+        margin-right: 4px;
+    }
+    .header .headerUl li .liContent .contentBottom .topRight span.pNumber{
+        display: block;
+        margin-top: 5px;
+        font-size: 20px;
+        color: #EB5405;
+    }
+
+    /*footer部分！*/
+    .footer {
+        width: 100%;
+        height: 450px;
+    }
+    .footerLeft{
+        padding-left: 1%;
+        box-sizing: border-box;
+        width: 65%;
+        height: 90%;
+        float: left;
+    }
+
+    .footer .footerRight{
+        width: 35%;
+        float: right;
+    }
+    .footer .footerRight ul.causeUl1{
+        width: 90%;
+        height: auto;
+    }
+    .footer .footerRight ul.causeUl1 li{
+        height: 50px;
+        line-height: 50px;
+        width: 100%;
+        position: relative;
+
+    }
+    .footer .footerRight ul.causeUl1 li ul.causeUl2{
+        position: absolute;
+        top:42px;
+        left:0;
+        width: 100%;
+        height: auto;
+        /*display: none;*/
+        z-index: 99999;
+        background-color: #EEF2F5;
+        color: black;
+    }
+    .footer .footerRight ul.causeUl1 li ul.causeUl2 span.spanUl1{
+        margin-left: 42px;
+        float: left;
+    }
+    .footer .footerRight ul.causeUl1 li ul.causeUl2 span.spanUl2{
+        margin-right: 80px;
+        float: right;
+    }
+
+    .footer .footerRight ul.causeUl1 li span.sp1{
+        float: left;
+        margin-left: 12px;
+        color: #2F87AF;
+    }
+    .footer .footerRight ul.causeUl1 li .bottomBox{
+        display: inline-block;
+        float: right;
+        margin-right: 20px;
+        margin-top: 22px;
+        width: 21%;
+        height: 10px;
+        position: relative;
+        background-color: #D8DCDB;
+        /*background-color: transparent;*/
+        border-radius: 6px;
+    }
+    .footer .footerRight ul.causeUl1 li .topBoxTs{
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        border-radius: 6px;
+    }
+    .footer .footerRight ul.causeUl1 li .bottomBox .topBox{
+        background-color: #9DB986;
+        width:92%;
+    }
+    .footer .footerRight ul.causeUl1 li .bottomBox .topBox1{
+        background-color: #9DB986;
+        width:96%;
+    }
+    .footer .footerRight ul.causeUl1 li .bottomBox .topBox2{
+        background-color: #9DB986;
+        width:87%;
+    }
+    .footer .footerRight ul.causeUl1 li .bottomBox .topBox3{
+        background-color: #9DB986;
+        width:59%;
+    }
+    .footer .footerRight ul.causeUl1 li .bottomBox .topBox4{
+        background-color: #9DB986;
+        width:77%;
+    }
+    .footer .footerRight ul.causeUl1 li .bottomBox .topBox5{
+        background-color: #9DB986;
+        width:64%;
+    }
+    .footer .footerRight ul.causeUl1 li .bottomBox .topBox6{
+        background-color: #9DB986;
+        width:87%;
+    }
+    .footer .footerRight ul.causeUl1 li span.spanPercent{
+        margin-right: 13px;
+        color:#2F87AF;
+        float: right;
+        display: inline-block;
+        width: 55px;
+        text-align: right;
+    }
+    /*.footer .footerRight ul.causeUl1 li span.spanMark{
+        margin-right: 10px;
+        float: right;
+    }*/
+    .footer .footerRight ul.causeUl1 li a.details{
+        display: inline-block;
+        float: right;
+        margin-right: 12px;
+        margin-top: 16px;
+        background-color: #EE8617;
+        padding: 0 8px;
+        border-radius: 10px;
+        width: 44px;
+        height: 20px;
+        line-height: 20px;
+    }
+
+    .footer .footerRight ul.causeUl1 li.firstLi{
+        background-color: #EEF2F5;
+        border-bottom: 2px solid #C7C8CA;
+    }
+    .footer .footerRight ul.causeUl1 li.firstLi span{
+        margin-left: 12px;
+        color:black;
+        font-size: 18px;
+    }
+}
+

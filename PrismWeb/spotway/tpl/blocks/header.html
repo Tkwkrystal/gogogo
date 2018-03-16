@@ -1,0 +1,73 @@
+      <!-- navbar header -->
+      <div class="navbar-header {{app.settings.navbarHeaderColor}}">
+        <button class="pull-right visible-xs dk" ui-toggle-class="show" data-target=".navbar-collapse">
+          <i class="glyphicon glyphicon-cog"></i>
+        </button>
+        <button class="pull-right visible-xs" ui-toggle-class="off-screen" data-target=".app-aside" ui-scroll="app">
+          <i class="glyphicon glyphicon-align-justify"></i>
+        </button>
+        <!-- brand -->
+        <a  class="navbar-brand text-lt" style="cursor: default">
+          <!--<i class="fa  fa-usd"></i>-->
+          <img src="img/mf.png" alt="..">
+          <span class="hidden-folded m-l-xs"><img src="img/pingAnLogo.png" alt=""></span>
+        </a>
+        <!-- / brand -->
+      </div>
+      <!-- / navbar header -->
+
+      <!-- navbar collapse -->
+      <div class="collapse navbar-collapse box-shadow {{app.settings.navbarCollapseColor}}">
+        <!-- buttons -->
+        <div class="nav navbar-nav m-l-sm hidden-xs">
+          <a id="suojin" href class="btn no-shadow navbar-btn" ng-click="showNav()" title="菜单缩放">
+            <i class="fa {{app.settings.asideFolded ? 'fa-indent' : 'fa-dedent'}} fa-fw"></i>
+          </a>
+          <a href="#/app/pcIndex" class="btn no-shadow navbar-btn" title="返回首页" onclick="fanhuishouye()">
+            <i class="glyphicon glyphicon-home" style="font-size: 13px"></i>
+          </a>
+
+        </div>
+          <!--右侧退出按钮-->
+          <a data-ng-click="logOff()" href="#/access/signin" ui-sref="access.signin" style="float: right;margin-top: 18px;font-size: 1.1em;font-weight: bold">
+          退出
+          </a>
+        <!--<a data-ng-click="logOff()" href="#/access/signin" ui-sref="access.signin" style="float: right;">-->
+            <!--<span class="exit-icon" title="退出"></span>-->
+
+        <!--</a>-->
+
+        <!-- / buttons -->
+
+        <!-- link and dropdown -->
+        <ul class="nav navbar-nav hidden-sm" ng-controller="ulController" id="navUl" >
+          <li id='removeLi' data-ng-click='showPages(navList)' class='active removeLi' data-ng-repeat="navList in navLists"> 
+            <a id='removeA' class='removeA'>{{navList.title}}</a> <span id='removeSpan' data-ng-click='close(navList)'>×</span>
+          </li>
+        </ul>
+       
+        <!--<div class="nav navbar-nav navbar-right">
+          <a href="javascript:;" class="btn no-shadow navbar-btn">
+            <i class="fa fa-fw"></i>
+          </a>
+          <a href="javascript:;" class="btn no-shadow navbar-btn">
+            <i class="fa fa-fw"></i>
+          </a>
+          <a href="javascript:;" class="btn no-shadow navbar-btn">
+            <i class="fa fa-fw"></i>
+          </a>
+        </div>-->
+      </div>
+
+      <script>
+        function fanhuishouye() {
+            console.log(111)
+            $(".titleName").each(function(indexx,objj){
+                //判断点击的前两个字在左侧是否能找到
+                if($(objj).text()=="公司主页"){
+                    $(objj).parent().css("background","#0a9ccc").parent().siblings().children().css("background","#1D2B36");
+                }
+            })
+        }
+
+      </script>
